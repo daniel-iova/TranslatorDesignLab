@@ -1,0 +1,62 @@
+/*
+   Simple +/-/* expression language; 
+   parser evaluates constant expressions on the fly
+*/
+
+package cup.example;
+
+import java_cup.runtime.*;
+import cup.example.Lexer;
+import java.io.IOException;
+import java.io.File;
+import java.io.FileInputStream;
+
+parser code {:
+  protected Lexer lexer;
+:}
+
+/* define how to connect to the scanner! */
+init with {:
+  ComplexSymbolFactory f = new ComplexSymbolFactory();
+  symbolFactory = f;
+  File file = new File("input.txt");
+  FileInputStream fis = null;
+  try {
+    fis = new FileInputStream(file);
+  } catch (IOException e) {
+    e.printStackTrace();
+  } 
+  lexer = new Lexer(f,fis);
+:};
+scan with {: return lexer.next_token(); :};
+
+/* Terminals (tokens returned by the scanner). */
+terminal OPEN_TAG, OPEN_END_TAG, CLOSE_TAG, EQUALS, TAG_NAME_WITH_SCHEME,
+OPEN_RDF_RDF, OPEN_RDF_DESCRIPTION, OPEN_RDFS_RESOURCE, OPEN_RDFS_CLASS,
+OPEN_RDFS_LITERAL, OPEN_RDF_BAG, OPEN_RDF_SEQ, OPEN_RDF_ALT, OPEN_RDF_LI,
+OPEN_RDF_LANGSTRING, OPEN_RDF_HTML, OPEN_RDF_LIST, OPEN_RDF_STATEMENT,
+OPEN_RDF_DATATYPE, OPEN_RDF_CONTAINER, CLOSE_RDF_RDF, CLOSE_RDF_DESCRIPTION,
+CLOSE_RDFS_RESOURCE, CLOSE_RDFS_CLASS, CLOSE_RDFS_LITERAL, CLOSE_RDF_BAG,
+CLOSE_RDF_SEQ, CLOSE_RDF_ALT, CLOSE_RDF_LI, CLOSE_RDF_LANGSTRING, CLOSE_RDF_HTML,
+CLOSE_RDF_LIST, CLOSE_RDF_STATEMENT, CLOSE_RDF_DATATYPE, CLOSE_RDF_CONTAINER,
+RDFS_RANGE, RDFS_DOMAIN, RDF_TYPE, RDFS_SUBCLASSOF, RDFS_SUBPROPERTYOF, RDFS_LABEL,
+RDFS_COMMENT, RDF_ABOUT, RDF_RESOURCE, RDF_PARSETYPE, RDF_DATATYPE, RDF_NODEID,
+RDF_ID, RDF_N, RDF_SUBJECT, RDF_PREDICATE, RDF_OBJECT, RDFS_SEEALSO,
+RDFS_ISDEFINEDBY, RDF_VALUE;
+
+terminal String PROPERTY_VALUE;
+
+/* Non terminals */
+non terminal            expr_list;
+non terminal String		expr;
+non terminal String		full_property;
+
+/* The grammar rules */
+expr_list ::= expr_list expr:e {: System.out.println(e + '\n'); :}
+			| expr:e {: System.out.println(e + '\n'); :}
+            ;
+
+full_property ::= TAG_NAME_WITH_SCHEME EQUALS PROPERTY_VALUE:e {: RESULT = e; :};
+
+expr ::= OPEN_RDF_RDF full_property:e1 full_property:e2 CLOSE_TAG CLOSE_RDF_RDF {: RESULT = "PROPERTY=" + e1 + " " + e2; :}
+		;
