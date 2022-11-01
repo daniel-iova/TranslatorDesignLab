@@ -8,64 +8,69 @@ package cup.example;
 /** CUP generated interface containing symbol constants. */
 public interface sym {
   /* terminals */
-  public static final int CLOSE_RDF_BAG = 27;
-  public static final int RDFS_RANGE = 37;
+  public static final int CLOSE_RDF_BAG = 28;
+  public static final int RDFS_RANGE = 39;
   public static final int OPEN_RDF_BAG = 12;
-  public static final int RDF_PREDICATE = 52;
-  public static final int RDF_TYPE = 39;
-  public static final int RDF_OBJECT = 53;
-  public static final int RDF_PARSETYPE = 46;
-  public static final int CLOSE_RDF_DESCRIPTION = 23;
+  public static final int RDF_PREDICATE = 53;
+  public static final int RDF_OBJECT = 54;
+  public static final int RDF_PARSETYPE = 47;
+  public static final int CLOSE_RDF_DESCRIPTION = 24;
   public static final int OPEN_RDF_DATATYPE = 20;
-  public static final int RDFS_SEEALSO = 54;
-  public static final int CLOSE_RDF_DATATYPE = 35;
+  public static final int RDFS_SEEALSO = 55;
+  public static final int CLOSE_RDF_DATATYPE = 36;
   public static final int EQUALS = 5;
-  public static final int CLOSE_RDF_LANGSTRING = 31;
-  public static final int RDFS_SUBCLASSOF = 40;
-  public static final int CLOSE_RDF_RDF = 22;
+  public static final int CLOSE_RDF_LANGSTRING = 32;
+  public static final int CLOSE_SINGULAR_TAG = 60;
+  public static final int RDFS_SUBCLASSOF = 41;
+  public static final int CLOSE_RDF_RDF = 23;
   public static final int OPEN_RDF_RDF = 7;
   public static final int OPEN_RDF_STATEMENT = 19;
-  public static final int CLOSE_RDF_LIST = 33;
-  public static final int RDF_DATATYPE = 47;
-  public static final int PROPERTY_VALUE = 57;
-  public static final int RDF_VALUE = 56;
-  public static final int RDFS_COMMENT = 43;
+  public static final int CLOSE_RDF_LIST = 34;
+  public static final int RDF_DATATYPE = 48;
+  public static final int PROPERTY_VALUE = 61;
+  public static final int OPEN_RDF_TYPE = 22;
+  public static final int RDF_VALUE = 57;
+  public static final int RDFS_COMMENT = 44;
   public static final int OPEN_RDF_LANGSTRING = 16;
-  public static final int CLOSE_RDF_HTML = 32;
-  public static final int RDFS_DOMAIN = 38;
-  public static final int RDFS_SUBPROPERTYOF = 41;
-  public static final int CLOSE_RDF_ALT = 29;
+  public static final int CLOSE_RDF_HTML = 33;
+  public static final int RDFS_DOMAIN = 40;
+  public static final int RDFS_SUBPROPERTYOF = 42;
+  public static final int CLOSE_RDF_ALT = 30;
   public static final int OPEN_RDF_DESCRIPTION = 8;
   public static final int OPEN_RDF_ALT = 14;
-  public static final int CLOSE_RDFS_CLASS = 25;
+  public static final int CLOSE_RDFS_CLASS = 26;
   public static final int OPEN_RDF_CONTAINER = 21;
-  public static final int RDF_RESOURCE = 45;
-  public static final int CLOSE_RDFS_RESOURCE = 24;
+  public static final int QUOTE = 59;
+  public static final int RDF_RESOURCE = 46;
+  public static final int CLOSE_RDFS_RESOURCE = 25;
   public static final int EOF = 0;
   public static final int error = 1;
-  public static final int RDF_N = 50;
-  public static final int CLOSE_RDF_LI = 30;
+  public static final int RDF_N = 51;
+  public static final int CLOSE_RDF_LI = 31;
   public static final int TAG_NAME_WITH_SCHEME = 6;
+  public static final int XML_VERSION = 58;
   public static final int OPEN_END_TAG = 3;
-  public static final int RDFS_LABEL = 42;
-  public static final int CLOSE_RDF_SEQ = 28;
+  public static final int RDFS_LABEL = 43;
+  public static final int CLOSE_RDF_SEQ = 29;
   public static final int OPEN_RDF_SEQ = 13;
   public static final int OPEN_RDFS_CLASS = 10;
-  public static final int RDF_NODEID = 48;
+  public static final int RDF_NODEID = 49;
+  public static final int CLOSE_RDF_STATEMENT = 35;
   public static final int OPEN_RDF_LI = 15;
-  public static final int CLOSE_RDF_STATEMENT = 34;
   public static final int OPEN_RDFS_LITERAL = 11;
   public static final int OPEN_RDF_LIST = 18;
-  public static final int CLOSE_RDFS_LITERAL = 26;
-  public static final int RDFS_ISDEFINEDBY = 55;
-  public static final int RDF_SUBJECT = 51;
+  public static final int CLOSE_RDFS_LITERAL = 27;
+  public static final int RDFS_ISDEFINEDBY = 56;
+  public static final int CLOSE_RDF_TYPE = 38;
+  public static final int INSIDE_TEXT = 62;
+  public static final int RDF_SUBJECT = 52;
   public static final int OPEN_RDF_HTML = 17;
-  public static final int RDF_ID = 49;
-  public static final int CLOSE_RDF_CONTAINER = 36;
+  public static final int RDF_ID = 50;
+  public static final int CLOSE_RDF_CONTAINER = 37;
   public static final int OPEN_RDFS_RESOURCE = 9;
   public static final int OPEN_TAG = 2;
   public static final int CLOSE_TAG = 4;
-  public static final int RDF_ABOUT = 44;
+  public static final int RDF_ABOUT = 45;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
@@ -89,6 +94,7 @@ public interface sym {
   "OPEN_RDF_STATEMENT",
   "OPEN_RDF_DATATYPE",
   "OPEN_RDF_CONTAINER",
+  "OPEN_RDF_TYPE",
   "CLOSE_RDF_RDF",
   "CLOSE_RDF_DESCRIPTION",
   "CLOSE_RDFS_RESOURCE",
@@ -104,9 +110,9 @@ public interface sym {
   "CLOSE_RDF_STATEMENT",
   "CLOSE_RDF_DATATYPE",
   "CLOSE_RDF_CONTAINER",
+  "CLOSE_RDF_TYPE",
   "RDFS_RANGE",
   "RDFS_DOMAIN",
-  "RDF_TYPE",
   "RDFS_SUBCLASSOF",
   "RDFS_SUBPROPERTYOF",
   "RDFS_LABEL",
@@ -124,7 +130,11 @@ public interface sym {
   "RDFS_SEEALSO",
   "RDFS_ISDEFINEDBY",
   "RDF_VALUE",
-  "PROPERTY_VALUE"
+  "XML_VERSION",
+  "QUOTE",
+  "CLOSE_SINGULAR_TAG",
+  "PROPERTY_VALUE",
+  "INSIDE_TEXT"
   };
 }
 

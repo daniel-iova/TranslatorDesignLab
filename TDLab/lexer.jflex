@@ -61,7 +61,10 @@ Comments = "<!--" [^*] ~"-->"
 
 TagNameWithScheme = [a-zA-z0-9\-_]+:[a-zA-z0-9\-_]+
 Rdf_N = "rdf_"[0-9]+
+Quote = \"
+InsideText=>.+<\/?
 PropertyValue=\".*\"
+XMLVersion = "<?xml version="\"[0-9]\.[0-9]\""?>"
 
 %eofval{
     return symbolFactory.newSymbol("EOF",sym.EOF);
@@ -74,13 +77,6 @@ PropertyValue=\".*\"
 <YYINITIAL> {
 
   {Whitespace} {}
-  
-  "<" { return symbolFactory.newSymbol("OPEN_TAG", OPEN_TAG); }
-  "</" { return symbolFactory.newSymbol("OPEN_END_TAG", OPEN_END_TAG); }
-  ">" { return symbolFactory.newSymbol("CLOSE_TAG", CLOSE_TAG); }
-  "=" { return symbolFactory.newSymbol("EQUALS", EQUALS); }
-  {TagNameWithScheme} { return symbolFactory.newSymbol("TAG_NAME_WITH_SCHEME", TAG_NAME_WITH_SCHEME); }
-  {PropertyValue} { return symbolFactory.newSymbol("PROPERTY_VALUE", PROPERTY_VALUE, yytext()); }
   
   /* Open RDF(S) Tags */
   
@@ -99,6 +95,7 @@ PropertyValue=\".*\"
   "<rdf:Statement" {return symbolFactory.newSymbol("OPEN_RDF_STATEMENT", OPEN_RDF_STATEMENT); }
   "<rdfs:Datatype" {return symbolFactory.newSymbol("OPEN_RDF_DATATYPE", OPEN_RDF_DATATYPE); }
   "<rdfs:Container" {return symbolFactory.newSymbol("OPEN_RDF_CONTAINER", OPEN_RDF_CONTAINER); }
+  "<rdf:type" { return symbolFactory.newSymbol("OPEN_RDF_TYPE", OPEN_RDF_TYPE); }
   
   /* Close RDF(S) Tags */
   
@@ -117,29 +114,44 @@ PropertyValue=\".*\"
   "</rdf:Statement>" {return symbolFactory.newSymbol("CLOSE_RDF_STATEMENT", CLOSE_RDF_STATEMENT); }
   "</rdfs:Datatype>" {return symbolFactory.newSymbol("CLOSE_RDF_DATATYPE", CLOSE_RDF_DATATYPE); }
   "</rdfs:Container>" {return symbolFactory.newSymbol("CLOSE_RDF_CONTAINER", CLOSE_RDF_CONTAINER); }
+  "</rdf:type>" { return symbolFactory.newSymbol("CLOSE_RDF_TYPE", CLOSE_RDF_TYPE); }
   
   /* RDF properties */
   
-  "rdfs:range=" { return symbolFactory.newSymbol("RDFS_RANGE", RDFS_RANGE); }
-  "rdfs:domain=" { return symbolFactory.newSymbol("RDFS_DOMAIN", RDFS_DOMAIN); }
-  "rdf:type=" { return symbolFactory.newSymbol("RDF_TYPE", RDF_TYPE); }
-  "rdfs:subClassOf=" { return symbolFactory.newSymbol("RDFS_SUBCLASSOF", RDFS_SUBCLASSOF); }      
-  "rdfs:subPropertyOf=" { return symbolFactory.newSymbol("RDFS_SUBPROPERTYOF", RDFS_SUBPROPERTYOF); }
-  "rdfs:label=" { return symbolFactory.newSymbol("RDFS_LABEL", RDFS_LABEL); }
-  "rdfs:comment=" { return symbolFactory.newSymbol("RDFS_COMMENT", RDFS_COMMENT); }
-  "rdf:about=" {return symbolFactory.newSymbol("RDF_ABOUT", RDF_ABOUT); }
-  "rdf:resource=" {return symbolFactory.newSymbol("RDF_RESOURCE", RDF_RESOURCE); }
-  "rdf:parseType=" {return symbolFactory.newSymbol("RDF_PARSETYPE", RDF_PARSETYPE); }
-  "rdf:datatype=" {return symbolFactory.newSymbol("RDF_DATATYPE", RDF_DATATYPE); }
-  "rdf:nodeID=" {return symbolFactory.newSymbol("RDF_NODEID", RDF_NODEID); }
-  "rdf:ID=" {return symbolFactory.newSymbol("RDF_ID", RDF_ID); }
+  "rdfs:range" { return symbolFactory.newSymbol("RDFS_RANGE", RDFS_RANGE); }
+  "rdfs:domain" { return symbolFactory.newSymbol("RDFS_DOMAIN", RDFS_DOMAIN); }
+  "rdfs:subClassOf" { return symbolFactory.newSymbol("RDFS_SUBCLASSOF", RDFS_SUBCLASSOF); }      
+  "rdfs:subPropertyOf" { return symbolFactory.newSymbol("RDFS_SUBPROPERTYOF", RDFS_SUBPROPERTYOF); }
+  "rdfs:label" { return symbolFactory.newSymbol("RDFS_LABEL", RDFS_LABEL); }
+  "rdfs:comment" { return symbolFactory.newSymbol("RDFS_COMMENT", RDFS_COMMENT); }
+  "rdf:about" {return symbolFactory.newSymbol("RDF_ABOUT", RDF_ABOUT); }
+  "rdf:resource" {return symbolFactory.newSymbol("RDF_RESOURCE", RDF_RESOURCE); }
+  "rdf:parseType" {return symbolFactory.newSymbol("RDF_PARSETYPE", RDF_PARSETYPE); }
+  "rdf:datatype" {return symbolFactory.newSymbol("RDF_DATATYPE", RDF_DATATYPE); }
+  "rdf:nodeID" {return symbolFactory.newSymbol("RDF_NODEID", RDF_NODEID); }
+  "rdf:ID" {return symbolFactory.newSymbol("RDF_ID", RDF_ID); }
   {Rdf_N} {return symbolFactory.newSymbol("RDF_N", RDF_N); }
-  "rdf:subject=" { return symbolFactory.newSymbol("RDF_SUBJECT", RDF_SUBJECT); }
-  "rdf:predicate=" { return symbolFactory.newSymbol("RDF_PREDICATE", RDF_PREDICATE); }      
-  "rdf:object=" { return symbolFactory.newSymbol("RDF_OBJECT", RDF_OBJECT); }
-  "rdfs:seeAlso=" { return symbolFactory.newSymbol("RDFS_SEEALSO", RDFS_SEEALSO); }        
-  "rdfs:isDefinedBy=" { return symbolFactory.newSymbol("RDFS_ISDEFINEDBY", RDFS_ISDEFINEDBY); }
-  "rdf:value=" { return symbolFactory.newSymbol("RDF_VALUE", RDF_VALUE); }
+  "rdf:subject" { return symbolFactory.newSymbol("RDF_SUBJECT", RDF_SUBJECT); }
+  "rdf:predicate" { return symbolFactory.newSymbol("RDF_PREDICATE", RDF_PREDICATE); }      
+  "rdf:object" { return symbolFactory.newSymbol("RDF_OBJECT", RDF_OBJECT); }
+  "rdfs:seeAlso" { return symbolFactory.newSymbol("RDFS_SEEALSO", RDFS_SEEALSO); }        
+  "rdfs:isDefinedBy" { return symbolFactory.newSymbol("RDFS_ISDEFINEDBY", RDFS_ISDEFINEDBY); }
+  "rdf:value" { return symbolFactory.newSymbol("RDF_VALUE", RDF_VALUE); }
+  
+  /* MISCELLANEOUS */
+  "<" { return symbolFactory.newSymbol("OPEN_TAG", OPEN_TAG); }
+  
+  "/>" { return symbolFactory.newSymbol("CLOSE_SINGULAR_TAG", CLOSE_SINGULAR_TAG); }
+  
+  "=" { return symbolFactory.newSymbol("EQUALS", EQUALS); }
+  {XMLVersion} { return symbolFactory.newSymbol("XML_VERSION", XML_VERSION); }
+  {TagNameWithScheme} { return symbolFactory.newSymbol("TAG_NAME_WITH_SCHEME", TAG_NAME_WITH_SCHEME); }
+  {PropertyValue} { return symbolFactory.newSymbol("PROPERTY_VALUE", PROPERTY_VALUE, yytext()); }
+  /**/
+  {Quote} { return symbolFactory.newSymbol("QUOTE", QUOTE); }
+  {InsideText} { return symbolFactory.newSymbol("INSIDE_TEXT", INSIDE_TEXT, yytext()); }
+  ">" { return symbolFactory.newSymbol("CLOSE_TAG", CLOSE_TAG); }
+  "</" { return symbolFactory.newSymbol("OPEN_END_TAG", OPEN_END_TAG); }
 }
 
 
