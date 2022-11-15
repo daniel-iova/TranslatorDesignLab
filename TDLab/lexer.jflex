@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 %class Lexer
 %implements sym
 %public
+%caseless
 %unicode
 %line
 %column
@@ -80,22 +81,25 @@ XMLVersion = "<?xml version="\"[0-9]\.[0-9]\""?>"
   
   /* Open RDF(S) Tags */
   
-  "<rdf:RDF" { return symbolFactory.newSymbol("OPEN_RDF_RDF", OPEN_RDF_RDF); }
-  "<rdf:Description" { return symbolFactory.newSymbol("OPEN_RDF_DESCRIPTION", OPEN_RDF_DESCRIPTION); }
-  "<rdfs:Resource" { return symbolFactory.newSymbol("OPEN_RDFS_RESOURCE", OPEN_RDFS_RESOURCE); }
-  "<rdfs:Class" { return symbolFactory.newSymbol("OPEN_RDFS_CLASS", OPEN_RDFS_CLASS); }
-  "<rdfs:Literal" { return symbolFactory.newSymbol("OPEN_RDFS_LITERAL", OPEN_RDFS_LITERAL); }
-  "<rdf:Bag" { return symbolFactory.newSymbol("OPEN_RDF_BAG", OPEN_RDF_BAG); }
-  "<rdf:Seq" { return symbolFactory.newSymbol("OPEN_RDF_SEQ", OPEN_RDF_SEQ); }
-  "<rdf:Alt" { return symbolFactory.newSymbol("OPEN_RDF_ALT", OPEN_RDF_ALT); }
-  "<rdf:li"  { return symbolFactory.newSymbol("OPEN_RDF_LI", OPEN_RDF_LI); }
-  "<rdf:langString" { return symbolFactory.newSymbol("OPEN_RDF_LANGSTRING", OPEN_RDF_LANGSTRING); }
-  "<rdf:HTML" {return symbolFactory.newSymbol("OPEN_RDF_HTML", OPEN_RDF_HTML); }
-  "<rdf:List" {return symbolFactory.newSymbol("OPEN_RDF_LIST", OPEN_RDF_LIST); }
-  "<rdf:Statement" {return symbolFactory.newSymbol("OPEN_RDF_STATEMENT", OPEN_RDF_STATEMENT); }
-  "<rdfs:Datatype" {return symbolFactory.newSymbol("OPEN_RDF_DATATYPE", OPEN_RDF_DATATYPE); }
-  "<rdfs:Container" {return symbolFactory.newSymbol("OPEN_RDF_CONTAINER", OPEN_RDF_CONTAINER); }
-  "<rdf:type" { return symbolFactory.newSymbol("OPEN_RDF_TYPE", OPEN_RDF_TYPE); }
+  "rdf:RDF" { return symbolFactory.newSymbol("OPEN_RDF_RDF", OPEN_RDF_RDF); }
+  "rdf:Description" { return symbolFactory.newSymbol("OPEN_RDF_DESCRIPTION", OPEN_RDF_DESCRIPTION); }
+  "rdfs:Resource" { return symbolFactory.newSymbol("OPEN_RDFS_RESOURCE", OPEN_RDFS_RESOURCE); }
+  "rdfs:Class" { return symbolFactory.newSymbol("OPEN_RDFS_CLASS", OPEN_RDFS_CLASS); }
+  "rdfs:Literal" { return symbolFactory.newSymbol("OPEN_RDFS_LITERAL", OPEN_RDFS_LITERAL); }
+  "rdf:Bag" { return symbolFactory.newSymbol("OPEN_RDF_BAG", OPEN_RDF_BAG); }
+  "rdf:Seq" { return symbolFactory.newSymbol("OPEN_RDF_SEQ", OPEN_RDF_SEQ); }
+  "rdf:Alt" { return symbolFactory.newSymbol("OPEN_RDF_ALT", OPEN_RDF_ALT); }
+  "rdf:li"  { return symbolFactory.newSymbol("OPEN_RDF_LI", OPEN_RDF_LI); }
+  "rdf:langString" { return symbolFactory.newSymbol("OPEN_RDF_LANGSTRING", OPEN_RDF_LANGSTRING); }
+  "rdf:HTML" {return symbolFactory.newSymbol("OPEN_RDF_HTML", OPEN_RDF_HTML); }
+  "rdf:List" {return symbolFactory.newSymbol("OPEN_RDF_LIST", OPEN_RDF_LIST); }
+  "rdf:Statement" {return symbolFactory.newSymbol("OPEN_RDF_STATEMENT", OPEN_RDF_STATEMENT); }
+  "rdfs:Datatype" {return symbolFactory.newSymbol("OPEN_RDF_DATATYPE", OPEN_RDF_DATATYPE); }
+  "rdfs:Container" {return symbolFactory.newSymbol("OPEN_RDF_CONTAINER", OPEN_RDF_CONTAINER); }
+  "rdf:type" { return symbolFactory.newSymbol("OPEN_RDF_TYPE", OPEN_RDF_TYPE); }
+  "rdf:aboutEach" { return symbolFactory.newSymbol("RDF_ABOUTEACH", RDF_ABOUTEACH); }
+  "rdf:aboutEachPrefix" { return symbolFactory.newSymbol("RDF_ABOUTEACHPREFIX", RDF_ABOUTEACHPREFIX); }
+  "rdf:bagID" { return symbolFactory.newSymbol("RDF_BAGID", RDF_BAGID); }
   
   /* Close RDF(S) Tags */
   
@@ -149,9 +153,9 @@ XMLVersion = "<?xml version="\"[0-9]\.[0-9]\""?>"
   {PropertyValue} { return symbolFactory.newSymbol("PROPERTY_VALUE", PROPERTY_VALUE, yytext()); }
   /**/
   {Quote} { return symbolFactory.newSymbol("QUOTE", QUOTE); }
-  {InsideText} { return symbolFactory.newSymbol("INSIDE_TEXT", INSIDE_TEXT, yytext()); }
   ">" { return symbolFactory.newSymbol("CLOSE_TAG", CLOSE_TAG); }
   "</" { return symbolFactory.newSymbol("OPEN_END_TAG", OPEN_END_TAG); }
+  {InsideText} { return symbolFactory.newSymbol("INSIDE_TEXT", INSIDE_TEXT, yytext()); }
 }
 
 

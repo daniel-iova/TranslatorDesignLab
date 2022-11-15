@@ -13,6 +13,7 @@ public interface sym {
   public static final int OPEN_RDF_BAG = 12;
   public static final int RDF_PREDICATE = 53;
   public static final int RDF_OBJECT = 54;
+  public static final int RDF_ABOUTEACHPREFIX = 62;
   public static final int RDF_PARSETYPE = 47;
   public static final int CLOSE_RDF_DESCRIPTION = 24;
   public static final int OPEN_RDF_DATATYPE = 20;
@@ -27,7 +28,8 @@ public interface sym {
   public static final int OPEN_RDF_STATEMENT = 19;
   public static final int CLOSE_RDF_LIST = 34;
   public static final int RDF_DATATYPE = 48;
-  public static final int PROPERTY_VALUE = 61;
+  public static final int PROPERTY_VALUE = 64;
+  public static final int RDF_BAGID = 63;
   public static final int OPEN_RDF_TYPE = 22;
   public static final int RDF_VALUE = 57;
   public static final int RDFS_COMMENT = 44;
@@ -44,6 +46,7 @@ public interface sym {
   public static final int RDF_RESOURCE = 46;
   public static final int CLOSE_RDFS_RESOURCE = 25;
   public static final int EOF = 0;
+  public static final int RDF_ABOUTEACH = 61;
   public static final int error = 1;
   public static final int RDF_N = 51;
   public static final int CLOSE_RDF_LI = 31;
@@ -62,7 +65,7 @@ public interface sym {
   public static final int CLOSE_RDFS_LITERAL = 27;
   public static final int RDFS_ISDEFINEDBY = 56;
   public static final int CLOSE_RDF_TYPE = 38;
-  public static final int INSIDE_TEXT = 62;
+  public static final int INSIDE_TEXT = 65;
   public static final int RDF_SUBJECT = 52;
   public static final int OPEN_RDF_HTML = 17;
   public static final int RDF_ID = 50;
@@ -133,6 +136,9 @@ public interface sym {
   "XML_VERSION",
   "QUOTE",
   "CLOSE_SINGULAR_TAG",
+  "RDF_ABOUTEACH",
+  "RDF_ABOUTEACHPREFIX",
+  "RDF_BAGID",
   "PROPERTY_VALUE",
   "INSIDE_TEXT"
   };
