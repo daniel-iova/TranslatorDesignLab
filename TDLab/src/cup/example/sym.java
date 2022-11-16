@@ -20,6 +20,7 @@ public interface sym {
   public static final int RDFS_SEEALSO = 55;
   public static final int CLOSE_RDF_DATATYPE = 36;
   public static final int EQUALS = 5;
+  public static final int RDF_PARSETYPE_RESOURCE = 65;
   public static final int CLOSE_RDF_LANGSTRING = 32;
   public static final int CLOSE_SINGULAR_TAG = 60;
   public static final int RDFS_SUBCLASSOF = 41;
@@ -28,7 +29,7 @@ public interface sym {
   public static final int OPEN_RDF_STATEMENT = 19;
   public static final int CLOSE_RDF_LIST = 34;
   public static final int RDF_DATATYPE = 48;
-  public static final int PROPERTY_VALUE = 64;
+  public static final int PROPERTY_VALUE = 67;
   public static final int RDF_BAGID = 63;
   public static final int OPEN_RDF_TYPE = 22;
   public static final int RDF_VALUE = 57;
@@ -39,6 +40,7 @@ public interface sym {
   public static final int RDFS_SUBPROPERTYOF = 42;
   public static final int CLOSE_RDF_ALT = 30;
   public static final int OPEN_RDF_DESCRIPTION = 8;
+  public static final int RDF_PARSETYPE_LITERAL = 64;
   public static final int OPEN_RDF_ALT = 14;
   public static final int CLOSE_RDFS_CLASS = 26;
   public static final int OPEN_RDF_CONTAINER = 21;
@@ -64,8 +66,9 @@ public interface sym {
   public static final int OPEN_RDF_LIST = 18;
   public static final int CLOSE_RDFS_LITERAL = 27;
   public static final int RDFS_ISDEFINEDBY = 56;
+  public static final int RDF_PARSETYPE_COLLECTION = 66;
   public static final int CLOSE_RDF_TYPE = 38;
-  public static final int INSIDE_TEXT = 65;
+  public static final int INSIDE_TEXT = 68;
   public static final int RDF_SUBJECT = 52;
   public static final int OPEN_RDF_HTML = 17;
   public static final int RDF_ID = 50;
@@ -139,6 +142,9 @@ public interface sym {
   "RDF_ABOUTEACH",
   "RDF_ABOUTEACHPREFIX",
   "RDF_BAGID",
+  "RDF_PARSETYPE_LITERAL",
+  "RDF_PARSETYPE_RESOURCE",
+  "RDF_PARSETYPE_COLLECTION",
   "PROPERTY_VALUE",
   "INSIDE_TEXT"
   };

@@ -34,27 +34,78 @@ public class Parser extends java_cup.runtime.lr_parser {
   /** Production table. */
   protected static final short _production_table[][] = 
     unpackFromStrings(new String[] {
-    "\000\102\000\002\011\005\000\002\002\004\000\002\022" +
+    "\000\347\000\002\011\005\000\002\002\004\000\002\022" +
     "\005\000\002\023\005\000\002\013\005\000\002\012\005" +
     "\000\002\014\005\000\002\015\005\000\002\016\005\000" +
-    "\002\017\005\000\002\020\005\000\002\021\005\000\002" +
+    "\002\024\005\000\002\017\005\000\002\020\005\000\002" +
+    "\021\005\000\002\030\004\000\002\030\003\000\002\027" +
+    "\003\000\002\027\003\000\002\027\003\000\002\027\003" +
+    "\000\002\027\003\000\002\027\003\000\002\027\003\000" +
+    "\002\027\003\000\002\027\003\000\002\027\003\000\002" +
+    "\027\003\000\002\027\003\000\002\027\002\000\002\026" +
+    "\003\000\002\026\003\000\002\026\003\000\002\026\002" +
+    "\000\002\031\003\000\002\031\003\000\002\031\004\000" +
+    "\002\031\004\000\002\031\003\000\002\031\004\000\002" +
+    "\031\004\000\002\031\004\000\002\031\004\000\002\031" +
+    "\005\000\002\031\005\000\002\031\005\000\002\031\005" +
+    "\000\002\031\005\000\002\031\005\000\002\031\002\000" +
+    "\002\040\007\000\002\040\011\000\002\040\011\000\002" +
+    "\040\011\000\002\040\011\000\002\040\011\000\002\040" +
+    "\011\000\002\040\011\000\002\040\011\000\002\040\011" +
+    "\000\002\040\011\000\002\037\010\000\002\037\011\000" +
+    "\002\037\012\000\002\037\013\000\002\037\012\000\002" +
+    "\037\013\000\002\037\012\000\002\037\013\000\002\037" +
+    "\012\000\002\037\013\000\002\037\012\000\002\037\013" +
+    "\000\002\037\012\000\002\037\013\000\002\037\012\000" +
+    "\002\037\013\000\002\037\012\000\002\037\013\000\002" +
+    "\037\012\000\002\037\013\000\002\037\012\000\002\037" +
+    "\013\000\002\036\010\000\002\036\011\000\002\036\012" +
+    "\000\002\036\013\000\002\036\012\000\002\036\013\000" +
+    "\002\036\012\000\002\036\013\000\002\036\012\000\002" +
+    "\036\013\000\002\036\012\000\002\036\013\000\002\036" +
+    "\012\000\002\036\013\000\002\036\012\000\002\036\013" +
+    "\000\002\036\012\000\002\036\013\000\002\036\012\000" +
+    "\002\036\013\000\002\036\012\000\002\036\013\000\002" +
+    "\035\010\000\002\035\011\000\002\035\012\000\002\035" +
+    "\013\000\002\035\012\000\002\035\013\000\002\035\012" +
+    "\000\002\035\013\000\002\035\012\000\002\035\013\000" +
+    "\002\035\012\000\002\035\013\000\002\035\012\000\002" +
+    "\035\013\000\002\035\012\000\002\035\013\000\002\035" +
+    "\012\000\002\035\013\000\002\035\012\000\002\035\013" +
+    "\000\002\035\012\000\002\035\013\000\002\034\007\000" +
+    "\002\034\010\000\002\034\010\000\002\034\011\000\002" +
+    "\034\010\000\002\034\011\000\002\034\010\000\002\034" +
+    "\011\000\002\034\010\000\002\034\011\000\002\034\010" +
+    "\000\002\034\011\000\002\034\010\000\002\034\011\000" +
+    "\002\034\010\000\002\034\011\000\002\034\010\000\002" +
+    "\034\011\000\002\034\010\000\002\034\011\000\002\034" +
+    "\010\000\002\034\011\000\002\025\003\000\002\025\003" +
+    "\000\002\025\004\000\002\025\004\000\002\033\006\000" +
+    "\002\043\002\000\002\033\020\000\002\033\007\000\002" +
+    "\033\010\000\002\033\007\000\002\033\010\000\002\033" +
+    "\007\000\002\033\010\000\002\033\007\000\002\033\010" +
+    "\000\002\033\007\000\002\033\010\000\002\033\007\000" +
+    "\002\033\010\000\002\033\007\000\002\033\010\000\002" +
+    "\033\007\000\002\033\010\000\002\033\007\000\002\033" +
+    "\010\000\002\033\007\000\002\033\010\000\002\032\007" +
+    "\000\002\032\010\000\002\032\011\000\002\032\011\000" +
+    "\002\032\012\000\002\032\011\000\002\032\012\000\002" +
+    "\032\011\000\002\032\011\000\002\032\012\000\002\032" +
+    "\011\000\002\032\012\000\002\032\011\000\002\032\012" +
+    "\000\002\032\011\000\002\032\012\000\002\032\011\000" +
+    "\002\032\012\000\002\032\011\000\002\032\012\000\002" +
     "\007\003\000\002\007\003\000\002\007\003\000\002\007" +
     "\003\000\002\007\003\000\002\007\003\000\002\007\003" +
     "\000\002\007\002\000\002\006\004\000\002\006\003\000" +
-    "\002\033\004\000\002\033\004\000\002\033\004\000\002" +
-    "\033\004\000\002\033\004\000\002\033\004\000\002\033" +
-    "\004\000\002\033\004\000\002\033\004\000\002\033\004" +
-    "\000\002\033\004\000\002\033\003\000\002\033\003\000" +
-    "\002\033\003\000\002\033\003\000\002\033\003\000\002" +
-    "\033\003\000\002\033\003\000\002\033\003\000\002\033" +
-    "\003\000\002\033\003\000\002\033\003\000\002\033\002" +
-    "\000\002\005\011\000\002\005\013\000\002\005\013\000" +
-    "\002\005\013\000\002\005\013\000\002\005\013\000\002" +
-    "\005\013\000\002\005\010\000\002\005\012\000\002\005" +
-    "\012\000\002\005\012\000\002\005\012\000\002\005\012" +
-    "\000\002\005\012\000\002\004\004\000\002\004\003\000" +
-    "\002\003\006\000\002\003\005\000\002\002\010\000\002" +
-    "\010\004\000\002\010\002" });
+    "\002\041\003\000\002\041\003\000\002\041\003\000\002" +
+    "\041\003\000\002\041\003\000\002\041\003\000\002\041" +
+    "\003\000\002\041\003\000\002\041\003\000\002\041\003" +
+    "\000\002\041\003\000\002\041\002\000\002\042\004\000" +
+    "\002\042\003\000\002\005\010\000\002\005\012\000\002" +
+    "\005\012\000\002\005\012\000\002\005\012\000\002\005" +
+    "\012\000\002\005\012\000\002\004\004\000\002\004\003" +
+    "\000\002\003\006\000\002\003\005\000\002\002\010\000" +
+    "\002\010\004" });
 
   /** Access to production table. */
   public short[][] production_table() {return _production_table;}
@@ -64,7 +115,7 @@ public class Parser extends java_cup.runtime.lr_parser {
     unpackFromStrings(new String[] {
     "\000\006\000\004\011\004\001\002\000\004\007\007\001" +
     "\002\000\004\002\006\001\002\000\004\002\000\001\002" +
-    "\000\004\102\010\001\002\000\004\002\001\001\002" });
+    "\000\004\105\010\001\002\000\004\002\001\001\002" });
 
   /** Access to parse-action table. */
   public short[][] action_table() {return _action_table;}
@@ -286,7 +337,7 @@ class CUP$Parser$actions {
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 9: // rdfAboutEachAttr ::= RDF_ABOUTEACH EQUALS PROPERTY_VALUE 
+          case 9: // rdfDescriptionAttr ::= OPEN_RDF_DESCRIPTION EQUALS PROPERTY_VALUE 
             {
               String RESULT =null;
 		Location pvxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
@@ -294,12 +345,12 @@ class CUP$Parser$actions {
 		String pv = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG11
  RESULT = pv; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("rdfAboutEachAttr",13, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("rdfDescriptionAttr",18, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 10: // rdfaboutEachPrefixAttr ::= RDF_ABOUTEACHPREFIX EQUALS PROPERTY_VALUE 
+          case 10: // rdfAboutEachAttr ::= RDF_ABOUTEACH EQUALS PROPERTY_VALUE 
             {
               String RESULT =null;
 		Location pvxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
@@ -307,12 +358,12 @@ class CUP$Parser$actions {
 		String pv = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG12
  RESULT = pv; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("rdfaboutEachPrefixAttr",14, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("rdfAboutEachAttr",13, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 11: // rdfBagIDAttr ::= RDF_BAGID EQUALS PROPERTY_VALUE 
+          case 11: // rdfaboutEachPrefixAttr ::= RDF_ABOUTEACHPREFIX EQUALS PROPERTY_VALUE 
             {
               String RESULT =null;
 		Location pvxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
@@ -320,288 +371,279 @@ class CUP$Parser$actions {
 		String pv = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG13
  RESULT = pv; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("rdfaboutEachPrefixAttr",14, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 12: // rdfBagIDAttr ::= RDF_BAGID EQUALS PROPERTY_VALUE 
+            {
+              String RESULT =null;
+		Location pvxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location pvxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String pv = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG14
+ RESULT = pv; 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("rdfBagIDAttr",15, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 12: // propertyElt ::= resourcePropertyElt 
-            {
-              Object RESULT =null;
-		//@@CUPDBG14
- System.out.println("propertyElt - resourcePropertyElt"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 13: // propertyElt ::= literalPropertyElt 
-            {
-              Object RESULT =null;
-		//@@CUPDBG15
- System.out.println("propertyElt - literalPropertyElt"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 14: // propertyElt ::= parseTypeLiteralPropertyElt 
-            {
-              Object RESULT =null;
-		//@@CUPDBG16
- System.out.println("propertyElt - parseTypeLiteralPropertyElt"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 15: // propertyElt ::= parseTypeResourcePropertyElt 
-            {
-              Object RESULT =null;
-		//@@CUPDBG17
- System.out.println("propertyElt - parseTypeResourcePropertyElt"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 16: // propertyElt ::= parseTypeCollectionPropertyElt 
-            {
-              Object RESULT =null;
-		//@@CUPDBG18
- System.out.println("propertyElt - parseTypeCollectionPropertyElt"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 17: // propertyElt ::= parseTypeOtherPropertyElt 
-            {
-              Object RESULT =null;
-		//@@CUPDBG19
- System.out.println("propertyElt - parseTypeOtherPropertyElt"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 18: // propertyElt ::= emptyPropertyElt 
-            {
-              Object RESULT =null;
-		//@@CUPDBG20
- System.out.println("propertyElt - emptyPropertyElt"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 19: // propertyElt ::= 
-            {
-              Object RESULT =null;
-		//@@CUPDBG21
- 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 20: // propertyEltList ::= propertyEltList propertyElt 
-            {
-              Object RESULT =null;
-		//@@CUPDBG22
- 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyEltList",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 21: // propertyEltList ::= propertyElt 
-            {
-              Object RESULT =null;
-		//@@CUPDBG23
- 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyEltList",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 22: // nodeElementAttr ::= nodeElementAttr rdfRDFAttr 
+          case 13: // emptyPropertyEltAttr2List ::= emptyPropertyEltAttr2List emptyPropertyEltAttr2 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG15
+ RESULT += ' ' + e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2List",22, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 14: // emptyPropertyEltAttr2List ::= emptyPropertyEltAttr2 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG16
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2List",22, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 15: // emptyPropertyEltAttr2 ::= rdfRDFAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG17
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 16: // emptyPropertyEltAttr2 ::= rdfParseTypeAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG18
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 17: // emptyPropertyEltAttr2 ::= rdfResourceAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG19
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 18: // emptyPropertyEltAttr2 ::= rdfAboutAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG20
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 19: // emptyPropertyEltAttr2 ::= rdfIDAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG21
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 20: // emptyPropertyEltAttr2 ::= rdfNodeIDAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG22
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 21: // emptyPropertyEltAttr2 ::= rdfDatatypeAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG23
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 22: // emptyPropertyEltAttr2 ::= rdfLiAttr 
+            {
+              String RESULT =null;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG24
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 23: // nodeElementAttr ::= nodeElementAttr rdfParseTypeAttr 
+          case 23: // emptyPropertyEltAttr2 ::= rdfAboutEachAttr 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG25
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 24: // nodeElementAttr ::= nodeElementAttr rdfResourceAttr 
+          case 24: // emptyPropertyEltAttr2 ::= rdfaboutEachPrefixAttr 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG26
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 25: // nodeElementAttr ::= nodeElementAttr rdfAboutAttr 
+          case 25: // emptyPropertyEltAttr2 ::= rdfBagIDAttr 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG27
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 26: // nodeElementAttr ::= nodeElementAttr rdfIDAttr 
+          case 26: // emptyPropertyEltAttr2 ::= rdfDescriptionAttr 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG28
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 27: // nodeElementAttr ::= nodeElementAttr rdfNodeIDAttr 
+          case 27: // emptyPropertyEltAttr2 ::= 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG29
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr2",21, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 28: // nodeElementAttr ::= nodeElementAttr rdfDatatypeAttr 
+          case 28: // emptyPropertyEltAttr1 ::= rdfResourceAttr 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG30
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr1",20, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 29: // nodeElementAttr ::= nodeElementAttr rdfLiAttr 
+          case 29: // emptyPropertyEltAttr1 ::= rdfNodeIDAttr 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG31
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr1",20, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 30: // nodeElementAttr ::= nodeElementAttr rdfAboutEachAttr 
+          case 30: // emptyPropertyEltAttr1 ::= rdfDatatypeAttr 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG32
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr1",20, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 31: // nodeElementAttr ::= nodeElementAttr rdfaboutEachPrefixAttr 
+          case 31: // emptyPropertyEltAttr1 ::= 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG33
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr1",20, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 32: // nodeElementAttr ::= nodeElementAttr rdfBagIDAttr 
+          case 32: // emptyPropertyEltAttr ::= rdfIDAttr 
             {
               String RESULT =null;
-		Location neaxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
-		Location neaxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
-		String nea = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG34
- RESULT = nea + ' ' + e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 33: // nodeElementAttr ::= rdfRDFAttr 
+          case 33: // emptyPropertyEltAttr ::= emptyPropertyEltAttr1 
             {
               String RESULT =null;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
@@ -609,38 +651,44 @@ class CUP$Parser$actions {
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG35
  RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 34: // nodeElementAttr ::= rdfParseTypeAttr 
+          case 34: // emptyPropertyEltAttr ::= rdfIDAttr emptyPropertyEltAttr1 
             {
               String RESULT =null;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG36
- RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 35: // nodeElementAttr ::= rdfResourceAttr 
+          case 35: // emptyPropertyEltAttr ::= emptyPropertyEltAttr1 rdfIDAttr 
             {
               String RESULT =null;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG37
- RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 36: // nodeElementAttr ::= rdfAboutAttr 
+          case 36: // emptyPropertyEltAttr ::= emptyPropertyEltAttr2List 
             {
               String RESULT =null;
 		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
@@ -648,323 +696,2090 @@ class CUP$Parser$actions {
 		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG38
  RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 37: // nodeElementAttr ::= rdfIDAttr 
+          case 37: // emptyPropertyEltAttr ::= rdfIDAttr emptyPropertyEltAttr2List 
             {
               String RESULT =null;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG39
- RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 38: // nodeElementAttr ::= rdfNodeIDAttr 
+          case 38: // emptyPropertyEltAttr ::= emptyPropertyEltAttr2List rdfIDAttr 
             {
               String RESULT =null;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG40
- RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 39: // nodeElementAttr ::= rdfDatatypeAttr 
+          case 39: // emptyPropertyEltAttr ::= emptyPropertyEltAttr1 emptyPropertyEltAttr2List 
             {
               String RESULT =null;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG41
- RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 40: // nodeElementAttr ::= rdfLiAttr 
+          case 40: // emptyPropertyEltAttr ::= emptyPropertyEltAttr2List emptyPropertyEltAttr1 
             {
               String RESULT =null;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG42
- RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 41: // nodeElementAttr ::= rdfAboutEachAttr 
+          case 41: // emptyPropertyEltAttr ::= rdfIDAttr emptyPropertyEltAttr1 emptyPropertyEltAttr2List 
             {
               String RESULT =null;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-2)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e3xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e3xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e3 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG43
- RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2 + ' ' + e3; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 42: // nodeElementAttr ::= rdfaboutEachPrefixAttr 
+          case 42: // emptyPropertyEltAttr ::= rdfIDAttr emptyPropertyEltAttr2List emptyPropertyEltAttr1 
             {
               String RESULT =null;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-2)).value;
+		Location e3xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e3xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e3 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG44
- RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2 + ' ' + e3; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 43: // nodeElementAttr ::= rdfBagIDAttr 
+          case 43: // emptyPropertyEltAttr ::= emptyPropertyEltAttr1 rdfIDAttr emptyPropertyEltAttr2List 
             {
               String RESULT =null;
-		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
-		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
-		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-2)).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e3xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e3xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e3 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG45
- RESULT = e; 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2 + ' ' + e3; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 44: // nodeElementAttr ::= 
+          case 44: // emptyPropertyEltAttr ::= emptyPropertyEltAttr1 emptyPropertyEltAttr2List rdfIDAttr 
             {
               String RESULT =null;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-2)).value;
+		Location e3xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e3xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e3 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG46
- 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2 + ' ' + e3; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 45: // nodeElement ::= nodeElement OPEN_TAG OPEN_RDF_RDF nodeElementAttr CLOSE_TAG propertyEltList CLOSE_RDF_RDF 
+          case 45: // emptyPropertyEltAttr ::= emptyPropertyEltAttr2List rdfIDAttr emptyPropertyEltAttr1 
             {
-              Object RESULT =null;
+              String RESULT =null;
+		Location e3xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xleft;
+		Location e3xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xright;
+		String e3 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-2)).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG47
- System.out.println("nodeElement - rdf:RDF"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2 + ' ' + e3; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 46: // nodeElement ::= nodeElement OPEN_TAG RDF_ID nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ID CLOSE_TAG 
+          case 46: // emptyPropertyEltAttr ::= emptyPropertyEltAttr2List emptyPropertyEltAttr1 rdfIDAttr 
             {
-              Object RESULT =null;
+              String RESULT =null;
+		Location e3xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xleft;
+		Location e3xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)).xright;
+		String e3 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-2)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
 		//@@CUPDBG48
- System.out.println("nodeElement - rdf:ID"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ RESULT = e1 + ' ' + e2 + ' ' + e3; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 47: // nodeElement ::= nodeElement OPEN_TAG RDF_ABOUT nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
+          case 47: // emptyPropertyEltAttr ::= 
             {
-              Object RESULT =null;
+              String RESULT =null;
 		//@@CUPDBG49
- System.out.println("nodeElement - rdf:about"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+  
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyEltAttr",23, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 48: // nodeElement ::= nodeElement OPEN_TAG RDF_PARSETYPE nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
+          case 48: // emptyPropertyElt ::= OPEN_TAG OPEN_RDF_RDF emptyPropertyElt CLOSE_TAG CLOSE_RDF_RDF 
             {
               Object RESULT =null;
 		//@@CUPDBG50
- System.out.println("nodeElement - rdf:parseType"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ System.out.println("emptyPropertyElt - OPEN_RDF_RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 49: // nodeElement ::= nodeElement OPEN_TAG RDF_RESOURCE nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
+          case 49: // emptyPropertyElt ::= OPEN_TAG RDF_ID emptyPropertyElt CLOSE_TAG OPEN_END_TAG RDF_ID CLOSE_TAG 
             {
               Object RESULT =null;
 		//@@CUPDBG51
- System.out.println("nodeElement - rdf:parseType"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ System.out.println("emptyPropertyElt - RDF_ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 50: // nodeElement ::= nodeElement OPEN_TAG RDF_NODEID nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+          case 50: // emptyPropertyElt ::= OPEN_TAG RDF_ABOUT emptyPropertyElt CLOSE_TAG OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
             {
               Object RESULT =null;
 		//@@CUPDBG52
- System.out.println("nodeElement - rdf:nodeID"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ System.out.println("emptyPropertyElt - RDF_ABOUT"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 51: // nodeElement ::= nodeElement OPEN_TAG RDF_DATATYPE nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+          case 51: // emptyPropertyElt ::= OPEN_TAG RDF_PARSETYPE emptyPropertyElt CLOSE_TAG OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
             {
               Object RESULT =null;
 		//@@CUPDBG53
- System.out.println("nodeElement - rdf:datatype"); 
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+ System.out.println("emptyPropertyElt - RDF_PARSETYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 52: // nodeElement ::= OPEN_TAG OPEN_RDF_RDF nodeElementAttr CLOSE_TAG propertyEltList CLOSE_RDF_RDF 
+          case 52: // emptyPropertyElt ::= OPEN_TAG RDF_RESOURCE emptyPropertyElt CLOSE_TAG OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
             {
               Object RESULT =null;
 		//@@CUPDBG54
+ System.out.println("emptyPropertyElt - RDF_RESOURCE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 53: // emptyPropertyElt ::= OPEN_TAG RDF_NODEID emptyPropertyElt CLOSE_TAG OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG55
+ System.out.println("emptyPropertyElt - RDF_NODEID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 54: // emptyPropertyElt ::= OPEN_TAG RDF_DATATYPE emptyPropertyElt CLOSE_TAG OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG56
+ System.out.println("emptyPropertyElt - RDF_DATATYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 55: // emptyPropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION emptyPropertyElt CLOSE_TAG OPEN_END_TAG OPEN_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG57
+ System.out.println("emptyPropertyElt - OPEN_RDF_DESCRIPTION"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 56: // emptyPropertyElt ::= OPEN_TAG RDF_ABOUTEACH emptyPropertyElt CLOSE_TAG OPEN_END_TAG RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG58
+ System.out.println("emptyPropertyElt - RDF_ABOUTEACH"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 57: // emptyPropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX emptyPropertyElt CLOSE_TAG OPEN_END_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG59
+ System.out.println("emptyPropertyElt - RDF_ABOUTEACHPREFIX"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 58: // emptyPropertyElt ::= OPEN_TAG RDF_BAGID emptyPropertyElt CLOSE_TAG OPEN_END_TAG RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG60
+ System.out.println("emptyPropertyElt - RDF_BAGID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("emptyPropertyElt",30, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 59: // parseTypeOtherPropertyElt ::= OPEN_TAG OPEN_RDF_RDF rdfParseTypeAttr CLOSE_TAG propertyEltList CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG61
+ System.out.println("parseTypeOtherPropertyElt - OPEN_RDF_RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 60: // parseTypeOtherPropertyElt ::= OPEN_TAG OPEN_RDF_RDF rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG62
+ System.out.println("parseTypeOtherPropertyElt - OPEN_RDF_RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 61: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_ID rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG63
+ System.out.println("parseTypeOtherPropertyElt - RDF_ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 62: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_ID rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG64
+ System.out.println("parseTypeOtherPropertyElt - RDF_ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 63: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_ABOUT rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG65
+ System.out.println("parseTypeOtherPropertyElt - RDF_ABOUT"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 64: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_ABOUT rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG66
+ System.out.println("parseTypeOtherPropertyElt - RDF_ABOUT"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 65: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_PARSETYPE rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG67
+ System.out.println("parseTypeOtherPropertyElt - RDF_PARSETYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 66: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_PARSETYPE rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG68
+ System.out.println("parseTypeOtherPropertyElt - RDF_PARSETYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 67: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_RESOURCE rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG69
+ System.out.println("parseTypeOtherPropertyElt - RDF_RESOURCE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 68: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_RESOURCE rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG70
+ System.out.println("parseTypeOtherPropertyElt - RDF_RESOURCE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 69: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_NODEID rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG71
+ System.out.println("parseTypeOtherPropertyElt - RDF_NODEID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 70: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_NODEID rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG72
+ System.out.println("parseTypeOtherPropertyElt - RDF_NODEID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 71: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_DATATYPE rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG73
+ System.out.println("parseTypeOtherPropertyElt - RDF_DATATYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 72: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_DATATYPE rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG74
+ System.out.println("parseTypeOtherPropertyElt - RDF_DATATYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 73: // parseTypeOtherPropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG OPEN_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG75
+ System.out.println("parseTypeOtherPropertyElt - OPEN_RDF_DESCRIPTION"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 74: // parseTypeOtherPropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG OPEN_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG76
+ System.out.println("parseTypeOtherPropertyElt - OPEN_RDF_DESCRIPTION"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 75: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_ABOUTEACH rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG77
+ System.out.println("parseTypeOtherPropertyElt - RDF_ABOUTEACH"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 76: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_ABOUTEACH rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG78
+ System.out.println("parseTypeOtherPropertyElt - RDF_ABOUTEACH"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 77: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG79
+ System.out.println("parseTypeOtherPropertyElt - RDF_ABOUTEACHPREFIX"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 78: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG80
+ System.out.println("parseTypeOtherPropertyElt - RDF_ABOUTEACHPREFIX"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 79: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_BAGID rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG81
+ System.out.println("parseTypeOtherPropertyElt - RDF_BAGID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 80: // parseTypeOtherPropertyElt ::= OPEN_TAG RDF_BAGID rdfIDAttr rdfParseTypeAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG82
+ System.out.println("parseTypeOtherPropertyElt - RDF_BAGID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeOtherPropertyElt",29, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 81: // parseTypeCollectionPropertyElt ::= OPEN_TAG OPEN_RDF_RDF RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG83
+ System.out.println("parseTypeCollectionPropertyElt - OPEN_RDF_RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 82: // parseTypeCollectionPropertyElt ::= OPEN_TAG OPEN_RDF_RDF rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG84
+ System.out.println("parseTypeCollectionPropertyElt - OPEN_RDF_RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 83: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_ID RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG85
+ System.out.println("parseTypeCollectionPropertyElt - RDF_ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 84: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_ID rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG86
+ System.out.println("parseTypeCollectionPropertyElt - RDF_ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 85: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_ABOUT RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG87
+ System.out.println("parseTypeCollectionPropertyElt - RDF_ABOUT"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 86: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_ABOUT rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG88
+ System.out.println("parseTypeCollectionPropertyElt - RDF_ABOUT"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 87: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_PARSETYPE RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG89
+ System.out.println("parseTypeCollectionPropertyElt - RDF_PARSETYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 88: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_PARSETYPE rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG90
+ System.out.println("parseTypeCollectionPropertyElt - RDF_PARSETYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 89: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_RESOURCE RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG91
+ System.out.println("parseTypeCollectionPropertyElt - RDF_RESOURCE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 90: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_RESOURCE rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG92
+ System.out.println("parseTypeCollectionPropertyElt - RDF_RESOURCE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 91: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_NODEID RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG93
+ System.out.println("parseTypeCollectionPropertyElt - RDF_NODEID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 92: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_NODEID rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG94
+ System.out.println("parseTypeCollectionPropertyElt - RDF_NODEID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 93: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_DATATYPE RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG95
+ System.out.println("parseTypeCollectionPropertyElt - RDF_DATATYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 94: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_DATATYPE rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG96
+ System.out.println("parseTypeCollectionPropertyElt - RDF_DATATYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 95: // parseTypeCollectionPropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG OPEN_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG97
+ System.out.println("parseTypeCollectionPropertyElt - OPEN_RDF_DESCRIPTION"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 96: // parseTypeCollectionPropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG OPEN_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG98
+ System.out.println("parseTypeCollectionPropertyElt - OPEN_RDF_DESCRIPTION"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 97: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_ABOUTEACH RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG99
+ System.out.println("parseTypeCollectionPropertyElt - RDF_ABOUTEACH"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 98: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_ABOUTEACH rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG100
+ System.out.println("parseTypeCollectionPropertyElt - RDF_ABOUTEACH"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 99: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG101
+ System.out.println("parseTypeCollectionPropertyElt - RDF_ABOUTEACHPREFIX"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 100: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG102
+ System.out.println("parseTypeCollectionPropertyElt - RDF_ABOUTEACHPREFIX"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 101: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_BAGID RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG103
+ System.out.println("parseTypeCollectionPropertyElt - RDF_BAGID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 102: // parseTypeCollectionPropertyElt ::= OPEN_TAG RDF_BAGID rdfIDAttr RDF_PARSETYPE_COLLECTION CLOSE_TAG nodeElementList OPEN_END_TAG RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG104
+ System.out.println("parseTypeCollectionPropertyElt - RDF_BAGID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeCollectionPropertyElt",28, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 103: // parseTypeResourcePropertyElt ::= OPEN_TAG OPEN_RDF_RDF RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG105
+ System.out.println("parseTypeResourcePropertyElt - OPEN_RDF_RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 104: // parseTypeResourcePropertyElt ::= OPEN_TAG OPEN_RDF_RDF rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG106
+ System.out.println("parseTypeResourcePropertyElt - OPEN_RDF_RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 105: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_ID RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG107
+ System.out.println("parseTypeResourcePropertyElt - RDF_ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 106: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_ID rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG108
+ System.out.println("parseTypeResourcePropertyElt - RDF_ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 107: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_ABOUT RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG109
+ System.out.println("parseTypeResourcePropertyElt - RDF_ABOUT"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 108: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_ABOUT rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG110
+ System.out.println("parseTypeResourcePropertyElt - RDF_ABOUT"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 109: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_PARSETYPE RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG111
+ System.out.println("parseTypeResourcePropertyElt - RDF_PARSETYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 110: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_PARSETYPE rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG112
+ System.out.println("parseTypeResourcePropertyElt - RDF_PARSETYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 111: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_RESOURCE RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG113
+ System.out.println("parseTypeResourcePropertyElt - RDF_RESOURCE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 112: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_RESOURCE rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG114
+ System.out.println("parseTypeResourcePropertyElt - RDF_RESOURCE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 113: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_NODEID RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG115
+ System.out.println("parseTypeResourcePropertyElt - RDF_NODEID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 114: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_NODEID rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG116
+ System.out.println("parseTypeResourcePropertyElt - RDF_NODEID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 115: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_DATATYPE RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG117
+ System.out.println("parseTypeResourcePropertyElt - RDF_DATATYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 116: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_DATATYPE rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG118
+ System.out.println("parseTypeResourcePropertyElt - RDF_DATATYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 117: // parseTypeResourcePropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG OPEN_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG119
+ System.out.println("parseTypeResourcePropertyElt - OPEN_RDF_DESCRIPTION"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 118: // parseTypeResourcePropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG OPEN_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG120
+ System.out.println("parseTypeResourcePropertyElt - OPEN_RDF_DESCRIPTION"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 119: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_ABOUTEACH RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG121
+ System.out.println("parseTypeResourcePropertyElt - RDF_ABOUTEACH"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 120: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_ABOUTEACH rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG122
+ System.out.println("parseTypeResourcePropertyElt - RDF_ABOUTEACH"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 121: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG123
+ System.out.println("parseTypeResourcePropertyElt - RDF_ABOUTEACHPREFIX"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 122: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG124
+ System.out.println("parseTypeResourcePropertyElt - RDF_ABOUTEACHPREFIX"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 123: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_BAGID RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG125
+ System.out.println("parseTypeResourcePropertyElt - RDF_BAGID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 124: // parseTypeResourcePropertyElt ::= OPEN_TAG RDF_BAGID rdfIDAttr RDF_PARSETYPE_RESOURCE CLOSE_TAG propertyEltList OPEN_END_TAG RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG126
+ System.out.println("parseTypeResourcePropertyElt - RDF_BAGID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeResourcePropertyElt",27, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-8)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 125: // parseTypeLiteralPropertyElt ::= OPEN_TAG OPEN_RDF_RDF RDF_PARSETYPE_LITERAL INSIDE_TEXT CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG127
+ System.out.println("parseTypeLiteralPropertyElt - OPEN_RDF_RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 126: // parseTypeLiteralPropertyElt ::= OPEN_TAG OPEN_RDF_RDF rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG128
+ System.out.println("parseTypeLiteralPropertyElt - OPEN_RDF_RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 127: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_ID RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG129
+ System.out.println("parseTypeLiteralPropertyElt - RDF_ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 128: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_ID rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG130
+ System.out.println("parseTypeLiteralPropertyElt - RDF_ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 129: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_ABOUT RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG131
+ System.out.println("parseTypeLiteralPropertyElt - RDF_ABOUT"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 130: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_ABOUT rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG132
+ System.out.println("parseTypeLiteralPropertyElt - RDF_ABOUT"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 131: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_PARSETYPE RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG133
+ System.out.println("parseTypeLiteralPropertyElt - RDF_PARSETYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 132: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_PARSETYPE rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG134
+ System.out.println("parseTypeLiteralPropertyElt - RDF_PARSETYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 133: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_RESOURCE RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG135
+ System.out.println("parseTypeLiteralPropertyElt - RDF_RESOURCE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 134: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_RESOURCE rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG136
+ System.out.println("parseTypeLiteralPropertyElt - RDF_RESOURCE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 135: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_NODEID RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG137
+ System.out.println("parseTypeLiteralPropertyElt - RDF_NODEID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 136: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_NODEID rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG138
+ System.out.println("parseTypeLiteralPropertyElt - RDF_NODEID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 137: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_DATATYPE RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG139
+ System.out.println("parseTypeLiteralPropertyElt - RDF_DATATYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 138: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_DATATYPE rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG140
+ System.out.println("parseTypeLiteralPropertyElt - RDF_DATATYPE"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 139: // parseTypeLiteralPropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION RDF_PARSETYPE_LITERAL INSIDE_TEXT OPEN_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG141
+ System.out.println("parseTypeLiteralPropertyElt - OPEN_RDF_DESCRIPTION"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 140: // parseTypeLiteralPropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT OPEN_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG142
+ System.out.println("parseTypeLiteralPropertyElt - OPEN_RDF_DESCRIPTION"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 141: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_ABOUTEACH RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG143
+ System.out.println("parseTypeLiteralPropertyElt - RDF_ABOUTEACH"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 142: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_ABOUTEACH rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG144
+ System.out.println("parseTypeLiteralPropertyElt - RDF_ABOUTEACH"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 143: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG145
+ System.out.println("parseTypeLiteralPropertyElt - RDF_ABOUTEACHPREFIX"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 144: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG146
+ System.out.println("parseTypeLiteralPropertyElt - RDF_ABOUTEACHPREFIX"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 145: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_BAGID RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG147
+ System.out.println("parseTypeLiteralPropertyElt - RDF_BAGID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 146: // parseTypeLiteralPropertyElt ::= OPEN_TAG RDF_BAGID rdfIDAttr RDF_PARSETYPE_LITERAL INSIDE_TEXT RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG148
+ System.out.println("parseTypeLiteralPropertyElt - RDF_BAGID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("parseTypeLiteralPropertyElt",26, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 147: // literalPropertyEltAttr ::= rdfIDAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG149
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyEltAttr",19, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 148: // literalPropertyEltAttr ::= rdfDescriptionAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG150
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyEltAttr",19, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 149: // literalPropertyEltAttr ::= rdfIDAttr rdfDescriptionAttr 
+            {
+              String RESULT =null;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG151
+ RESULT = e1 + ' ' + e2; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyEltAttr",19, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 150: // literalPropertyEltAttr ::= rdfDescriptionAttr rdfIDAttr 
+            {
+              String RESULT =null;
+		Location e1xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xleft;
+		Location e1xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).xright;
+		String e1 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
+		Location e2xleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location e2xright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e2 = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG152
+ RESULT = e1 + ' ' + e2; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyEltAttr",19, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 151: // literalPropertyElt ::= OPEN_TAG OPEN_RDF_RDF INSIDE_TEXT CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG153
+ System.out.println("resourcePropertyElt - rdf:RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 152: // NT$0 ::= 
+            {
+              Object RESULT =null;
+//@@CUPDBG154
+ System.out.println("resourcePropertyElt - rdf:RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("NT$0",33, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 153: // literalPropertyElt ::= OPEN_TAG OPEN_RDF_RDF literalPropertyEltAttr INSIDE_TEXT OPEN_RDF_RDF CLOSE_TAG NT$0 OPEN_TAG OPEN_RDF_RDF rdfIDAttr rdfDatatypeAttr CLOSE_TAG nodeElement CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+              // propagate RESULT from NT$0
+                RESULT = (Object) ((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-7)).value;
+		//@@CUPDBG155
+ System.out.println("resourcePropertyElt - rdf:RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-13)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 154: // literalPropertyElt ::= OPEN_TAG RDF_ID INSIDE_TEXT RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG156
+ System.out.println("resourcePropertyElt - rdf:ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 155: // literalPropertyElt ::= OPEN_TAG RDF_ID rdfDatatypeAttr INSIDE_TEXT RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG157
+ System.out.println("resourcePropertyElt - rdf:ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 156: // literalPropertyElt ::= OPEN_TAG RDF_ABOUT INSIDE_TEXT RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG158
+ System.out.println("resourcePropertyElt - rdf:about"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 157: // literalPropertyElt ::= OPEN_TAG RDF_ABOUT literalPropertyEltAttr INSIDE_TEXT RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG159
+ System.out.println("resourcePropertyElt - rdf:about"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 158: // literalPropertyElt ::= OPEN_TAG RDF_PARSETYPE INSIDE_TEXT RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG160
+ System.out.println("resourcePropertyElt - rdf:parseType"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 159: // literalPropertyElt ::= OPEN_TAG RDF_PARSETYPE literalPropertyEltAttr INSIDE_TEXT RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG161
+ System.out.println("resourcePropertyElt - rdf:parseType"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 160: // literalPropertyElt ::= OPEN_TAG RDF_RESOURCE INSIDE_TEXT RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG162
+ System.out.println("resourcePropertyElt - rdf:parseType"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 161: // literalPropertyElt ::= OPEN_TAG RDF_RESOURCE literalPropertyEltAttr INSIDE_TEXT RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG163
+ System.out.println("resourcePropertyElt - rdf:parseType"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 162: // literalPropertyElt ::= OPEN_TAG RDF_NODEID INSIDE_TEXT RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG164
+ System.out.println("resourcePropertyElt - rdf:nodeID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 163: // literalPropertyElt ::= OPEN_TAG RDF_NODEID literalPropertyEltAttr INSIDE_TEXT RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG165
+ System.out.println("resourcePropertyElt - rdf:nodeID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 164: // literalPropertyElt ::= OPEN_TAG RDF_DATATYPE INSIDE_TEXT RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG166
+ System.out.println("resourcePropertyElt - rdf:datatype"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 165: // literalPropertyElt ::= OPEN_TAG RDF_DATATYPE literalPropertyEltAttr INSIDE_TEXT RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG167
+ System.out.println("resourcePropertyElt - rdf:datatype"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 166: // literalPropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION INSIDE_TEXT CLOSE_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG168
+ System.out.println("resourcePropertyElt - rdf:Description"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 167: // literalPropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION literalPropertyEltAttr INSIDE_TEXT CLOSE_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG169
+ System.out.println("resourcePropertyElt - rdf:Description"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 168: // literalPropertyElt ::= OPEN_TAG RDF_ABOUTEACH INSIDE_TEXT RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG170
+ System.out.println("resourcePropertyElt - rdf:aboutEach"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 169: // literalPropertyElt ::= OPEN_TAG RDF_ABOUTEACH literalPropertyEltAttr INSIDE_TEXT RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG171
+ System.out.println("resourcePropertyElt - rdf:aboutEach"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 170: // literalPropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX INSIDE_TEXT RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG172
+ System.out.println("resourcePropertyElt - rdf:aboutEachPrefix"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 171: // literalPropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX literalPropertyEltAttr INSIDE_TEXT RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG173
+ System.out.println("resourcePropertyElt - rdf:aboutEachPrefix"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 172: // literalPropertyElt ::= OPEN_TAG RDF_BAGID INSIDE_TEXT RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG174
+ System.out.println("resourcePropertyElt - rdf:bagId"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 173: // literalPropertyElt ::= OPEN_TAG RDF_BAGID literalPropertyEltAttr INSIDE_TEXT RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG175
+ System.out.println("resourcePropertyElt - rdf:bagId"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("literalPropertyElt",25, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 174: // resourcePropertyElt ::= OPEN_TAG OPEN_RDF_RDF CLOSE_TAG nodeElement CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG176
+ System.out.println("resourcePropertyElt - rdf:RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-4)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 175: // resourcePropertyElt ::= OPEN_TAG OPEN_RDF_RDF rdfIDAttr CLOSE_TAG nodeElement CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG177
+ System.out.println("resourcePropertyElt - rdf:RDF"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 176: // resourcePropertyElt ::= OPEN_TAG RDF_ID CLOSE_TAG nodeElement OPEN_END_TAG RDF_ID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG178
+ System.out.println("resourcePropertyElt - rdf:ID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 177: // resourcePropertyElt ::= OPEN_TAG RDF_ABOUT CLOSE_TAG nodeElement OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG179
+ System.out.println("resourcePropertyElt - rdf:about"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 178: // resourcePropertyElt ::= OPEN_TAG RDF_ABOUT rdfIDAttr CLOSE_TAG nodeElement OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG180
+ System.out.println("resourcePropertyElt - rdf:about"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 179: // resourcePropertyElt ::= OPEN_TAG RDF_PARSETYPE CLOSE_TAG nodeElement OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG181
+ System.out.println("resourcePropertyElt - rdf:parseType"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 180: // resourcePropertyElt ::= OPEN_TAG RDF_PARSETYPE rdfIDAttr CLOSE_TAG nodeElement OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG182
+ System.out.println("resourcePropertyElt - rdf:parseType"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 181: // resourcePropertyElt ::= OPEN_TAG RDF_RESOURCE CLOSE_TAG nodeElement OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG183
+ System.out.println("resourcePropertyElt - rdf:parseType"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 182: // resourcePropertyElt ::= OPEN_TAG RDF_NODEID CLOSE_TAG nodeElement OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG184
+ System.out.println("resourcePropertyElt - rdf:nodeID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 183: // resourcePropertyElt ::= OPEN_TAG RDF_NODEID rdfIDAttr CLOSE_TAG nodeElement OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG185
+ System.out.println("resourcePropertyElt - rdf:nodeID"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 184: // resourcePropertyElt ::= OPEN_TAG RDF_DATATYPE CLOSE_TAG nodeElement OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG186
+ System.out.println("resourcePropertyElt - rdf:datatype"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 185: // resourcePropertyElt ::= OPEN_TAG RDF_DATATYPE rdfIDAttr CLOSE_TAG nodeElement OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG187
+ System.out.println("resourcePropertyElt - rdf:datatype"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 186: // resourcePropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION CLOSE_TAG nodeElement OPEN_END_TAG CLOSE_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG188
+ System.out.println("resourcePropertyElt - rdf:Description"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 187: // resourcePropertyElt ::= OPEN_TAG OPEN_RDF_DESCRIPTION rdfIDAttr CLOSE_TAG nodeElement OPEN_END_TAG CLOSE_RDF_DESCRIPTION CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG189
+ System.out.println("resourcePropertyElt - rdf:Description"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 188: // resourcePropertyElt ::= OPEN_TAG RDF_ABOUTEACH CLOSE_TAG nodeElement OPEN_END_TAG RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG190
+ System.out.println("resourcePropertyElt - rdf:aboutEach"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 189: // resourcePropertyElt ::= OPEN_TAG RDF_ABOUTEACH rdfIDAttr CLOSE_TAG nodeElement OPEN_END_TAG RDF_ABOUTEACH CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG191
+ System.out.println("resourcePropertyElt - rdf:aboutEach"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 190: // resourcePropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG nodeElement OPEN_END_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG192
+ System.out.println("resourcePropertyElt - rdf:aboutEachPrefix"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 191: // resourcePropertyElt ::= OPEN_TAG RDF_ABOUTEACHPREFIX rdfIDAttr CLOSE_TAG nodeElement OPEN_END_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG193
+ System.out.println("resourcePropertyElt - rdf:aboutEachPrefix"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 192: // resourcePropertyElt ::= OPEN_TAG RDF_BAGID CLOSE_TAG nodeElement OPEN_END_TAG RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG194
+ System.out.println("resourcePropertyElt - rdf:bagId"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-6)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 193: // resourcePropertyElt ::= OPEN_TAG RDF_BAGID rdfIDAttr CLOSE_TAG nodeElement OPEN_END_TAG RDF_BAGID CLOSE_TAG 
+            {
+              Object RESULT =null;
+		//@@CUPDBG195
+ System.out.println("resourcePropertyElt - rdf:bagId"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("resourcePropertyElt",24, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 194: // propertyElt ::= resourcePropertyElt 
+            {
+              Object RESULT =null;
+		//@@CUPDBG196
+ System.out.println("propertyElt - resourcePropertyElt"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 195: // propertyElt ::= literalPropertyElt 
+            {
+              Object RESULT =null;
+		//@@CUPDBG197
+ System.out.println("propertyElt - literalPropertyElt"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 196: // propertyElt ::= parseTypeLiteralPropertyElt 
+            {
+              Object RESULT =null;
+		//@@CUPDBG198
+ System.out.println("propertyElt - parseTypeLiteralPropertyElt"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 197: // propertyElt ::= parseTypeResourcePropertyElt 
+            {
+              Object RESULT =null;
+		//@@CUPDBG199
+ System.out.println("propertyElt - parseTypeResourcePropertyElt"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 198: // propertyElt ::= parseTypeCollectionPropertyElt 
+            {
+              Object RESULT =null;
+		//@@CUPDBG200
+ System.out.println("propertyElt - parseTypeCollectionPropertyElt"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 199: // propertyElt ::= parseTypeOtherPropertyElt 
+            {
+              Object RESULT =null;
+		//@@CUPDBG201
+ System.out.println("propertyElt - parseTypeOtherPropertyElt"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 200: // propertyElt ::= emptyPropertyElt 
+            {
+              Object RESULT =null;
+		//@@CUPDBG202
+ System.out.println("propertyElt - emptyPropertyElt"); 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 201: // propertyElt ::= 
+            {
+              Object RESULT =null;
+		//@@CUPDBG203
+ 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyElt",5, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 202: // propertyEltList ::= propertyEltList propertyElt 
+            {
+              Object RESULT =null;
+		//@@CUPDBG204
+ 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyEltList",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 203: // propertyEltList ::= propertyElt 
+            {
+              Object RESULT =null;
+		//@@CUPDBG205
+ 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("propertyEltList",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 204: // nodeElementAttr ::= rdfRDFAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG206
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 205: // nodeElementAttr ::= rdfParseTypeAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG207
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 206: // nodeElementAttr ::= rdfResourceAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG208
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 207: // nodeElementAttr ::= rdfAboutAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG209
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 208: // nodeElementAttr ::= rdfIDAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG210
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 209: // nodeElementAttr ::= rdfNodeIDAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG211
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 210: // nodeElementAttr ::= rdfDatatypeAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG212
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 211: // nodeElementAttr ::= rdfLiAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG213
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 212: // nodeElementAttr ::= rdfAboutEachAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG214
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 213: // nodeElementAttr ::= rdfaboutEachPrefixAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG215
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 214: // nodeElementAttr ::= rdfBagIDAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG216
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 215: // nodeElementAttr ::= 
+            {
+              String RESULT =null;
+		//@@CUPDBG217
+ 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttr",31, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 216: // nodeElementAttrList ::= nodeElementAttrList nodeElementAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG218
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttrList",32, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 217: // nodeElementAttrList ::= nodeElementAttr 
+            {
+              String RESULT =null;
+		Location exleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
+		Location exright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
+		String e = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
+		//@@CUPDBG219
+ RESULT = e; 
+              CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementAttrList",32, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
+            }
+          return CUP$Parser$result;
+
+          /*. . . . . . . . . . . . . . . . . . . .*/
+          case 218: // nodeElement ::= OPEN_TAG OPEN_RDF_RDF nodeElementAttrList CLOSE_TAG propertyEltList CLOSE_RDF_RDF 
+            {
+              Object RESULT =null;
+		//@@CUPDBG220
  System.out.println("nodeElement - rdf:RDF"); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 53: // nodeElement ::= OPEN_TAG RDF_ID nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ID CLOSE_TAG 
+          case 219: // nodeElement ::= OPEN_TAG RDF_ID nodeElementAttrList CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ID CLOSE_TAG 
             {
               Object RESULT =null;
-		//@@CUPDBG55
+		//@@CUPDBG221
  System.out.println("nodeElement - rdf:ID"); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 54: // nodeElement ::= OPEN_TAG RDF_ABOUT nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
+          case 220: // nodeElement ::= OPEN_TAG RDF_ABOUT nodeElementAttrList CLOSE_TAG propertyEltList OPEN_END_TAG RDF_ABOUT CLOSE_TAG 
             {
               Object RESULT =null;
-		//@@CUPDBG56
+		//@@CUPDBG222
  System.out.println("nodeElement - rdf:about"); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 55: // nodeElement ::= OPEN_TAG RDF_PARSETYPE nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
+          case 221: // nodeElement ::= OPEN_TAG RDF_PARSETYPE nodeElementAttrList CLOSE_TAG propertyEltList OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG 
             {
               Object RESULT =null;
-		//@@CUPDBG57
+		//@@CUPDBG223
  System.out.println("nodeElement - rdf:parseType"); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 56: // nodeElement ::= OPEN_TAG RDF_RESOURCE nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
+          case 222: // nodeElement ::= OPEN_TAG RDF_RESOURCE nodeElementAttrList CLOSE_TAG propertyEltList OPEN_END_TAG RDF_RESOURCE CLOSE_TAG 
             {
               Object RESULT =null;
-		//@@CUPDBG58
+		//@@CUPDBG224
  System.out.println("nodeElement - rdf:parseType"); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 57: // nodeElement ::= OPEN_TAG RDF_NODEID nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_NODEID CLOSE_TAG 
+          case 223: // nodeElement ::= OPEN_TAG RDF_NODEID nodeElementAttrList CLOSE_TAG propertyEltList OPEN_END_TAG RDF_NODEID CLOSE_TAG 
             {
               Object RESULT =null;
-		//@@CUPDBG59
+		//@@CUPDBG225
  System.out.println("nodeElement - rdf:nodeID"); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 58: // nodeElement ::= OPEN_TAG RDF_DATATYPE nodeElementAttr CLOSE_TAG propertyEltList OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
+          case 224: // nodeElement ::= OPEN_TAG RDF_DATATYPE nodeElementAttrList CLOSE_TAG propertyEltList OPEN_END_TAG RDF_DATATYPE CLOSE_TAG 
             {
               Object RESULT =null;
-		//@@CUPDBG60
+		//@@CUPDBG226
  System.out.println("nodeElement - rdf:datatype"); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElement",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-7)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 59: // nodeElementList ::= nodeElementList nodeElement 
+          case 225: // nodeElementList ::= nodeElementList nodeElement 
             {
               Object RESULT =null;
-		//@@CUPDBG61
+		//@@CUPDBG227
  
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementList",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 60: // nodeElementList ::= nodeElement 
+          case 226: // nodeElementList ::= nodeElement 
             {
               Object RESULT =null;
-		//@@CUPDBG62
+		//@@CUPDBG228
  
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("nodeElementList",2, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 61: // genericAttribute ::= genericAttribute TAG_NAME_WITH_SCHEME EQUALS PROPERTY_VALUE 
+          case 227: // genericAttribute ::= genericAttribute TAG_NAME_WITH_SCHEME EQUALS PROPERTY_VALUE 
             {
               Object RESULT =null;
 		Location pvxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location pvxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String pv = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		//@@CUPDBG63
+		//@@CUPDBG229
  System.out.println(pv); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("genericAttribute",1, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 62: // genericAttribute ::= TAG_NAME_WITH_SCHEME EQUALS PROPERTY_VALUE 
+          case 228: // genericAttribute ::= TAG_NAME_WITH_SCHEME EQUALS PROPERTY_VALUE 
             {
               Object RESULT =null;
 		Location pvxleft = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xleft;
 		Location pvxright = ((java_cup.runtime.ComplexSymbolFactory.ComplexSymbol)CUP$Parser$stack.peek()).xright;
 		String pv = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		//@@CUPDBG64
+		//@@CUPDBG230
  System.out.println(pv); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("genericAttribute",1, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 63: // rdfRDF ::= OPEN_TAG OPEN_RDF_RDF genericAttribute CLOSE_TAG nodeElementList CLOSE_RDF_RDF 
+          case 229: // rdfRDF ::= OPEN_TAG OPEN_RDF_RDF genericAttribute CLOSE_TAG nodeElementList CLOSE_RDF_RDF 
             {
               Object RESULT =null;
-		//@@CUPDBG65
+		//@@CUPDBG231
  
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("rdfRDF",0, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 
           /*. . . . . . . . . . . . . . . . . . . .*/
-          case 64: // expr_list ::= XML_VERSION rdfRDF 
+          case 230: // expr_list ::= XML_VERSION rdfRDF 
             {
               Object RESULT =null;
-		//@@CUPDBG66
- 
+		//@@CUPDBG232
+ System.out.println("START"); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("expr_list",6, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
-            }
-          return CUP$Parser$result;
-
-          /*. . . . . . . . . . . . . . . . . . . .*/
-          case 65: // expr_list ::= 
-            {
-              Object RESULT =null;
-
-              CUP$Parser$result = parser.getSymbolFactory().newSymbol("expr_list",6, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
 

@@ -130,6 +130,9 @@ XMLVersion = "<?xml version="\"[0-9]\.[0-9]\""?>"
   "rdfs:comment" { return symbolFactory.newSymbol("RDFS_COMMENT", RDFS_COMMENT); }
   "rdf:about" {return symbolFactory.newSymbol("RDF_ABOUT", RDF_ABOUT); }
   "rdf:resource" {return symbolFactory.newSymbol("RDF_RESOURCE", RDF_RESOURCE); }
+  "rdf:parseType=\"Literal\"" {return symbolFactory.newSymbol("RDF_PARSETYPE", RDF_PARSETYPE_LITERAL); }
+  "rdf:parseType=\"Resource\"" {return symbolFactory.newSymbol("RDF_PARSETYPE", RDF_PARSETYPE_RESOURCE); }
+  "rdf:parseType=\"Collection\"" {return symbolFactory.newSymbol("RDF_PARSETYPE", RDF_PARSETYPE_COLLECTION); }
   "rdf:parseType" {return symbolFactory.newSymbol("RDF_PARSETYPE", RDF_PARSETYPE); }
   "rdf:datatype" {return symbolFactory.newSymbol("RDF_DATATYPE", RDF_DATATYPE); }
   "rdf:nodeID" {return symbolFactory.newSymbol("RDF_NODEID", RDF_NODEID); }
