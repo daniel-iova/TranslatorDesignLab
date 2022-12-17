@@ -10,9 +10,24 @@ import cup.example.Lexer;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 
 parser code {:
-  protected Lexer lexer;
+   
+ 	protected Lexer lexer;
+  	protected MultiTree syntaxTree = new MultiTree(); 
+	
+ 	 public MultiTree getSyntaxTree()
+  	{
+		return syntaxTree;
+  	}
+
+	protected MultiTreeNode createRDFRootTag(String name, ArrayList<NodeProperty> nodeElementAttrList, MultiTreeNode nodeElementList, MultiTreeNode rpEltEnd) { throw new UnsupportedOperationException(); }
+	protected MultiTreeNode	createNodeElementNode(String name, ArrayList<NodeProperty> nodeElementAttrList, MultiTreeNode propertyEltList, MultiTreeNode endInfo) { throw new UnsupportedOperationException(); }
+	protected NodeProperty  createNodeElementAttr(String name, String insideText) { throw new UnsupportedOperationException(); }
+	protected MultiTreeNode createRPEltEndNode(MultiTreeNode nodeElement, String insideText) { throw new UnsupportedOperationException(); }
+	protected MultiTreeNode createGenericTagNode(String name, String insideText) { throw new UnsupportedOperationException(); }
+	protected MultiTreeNode createResourcePropertyEltNode(String name, ArrayList<NodeProperty> nodeElementAttrList, MultiTreeNode rpEltEnd) { throw new UnsupportedOperationException(); }
 :}
 
 /* define how to connect to the scanner! */
@@ -31,149 +46,136 @@ init with {:
 scan with {: return lexer.next_token(); :};
 
 terminal String
-	XML_VERSION, OPEN_TAG, OPEN_RDF_RDF, CLOSE_RDF_RDF, CLOSE_TAG, RDF_PARSETYPE, 
-	RDF_RESOURCE, RDF_NODEID, RDF_DATATYPE, RDF_LI, RDF_DESCRIPTION, RDF_TYPE,
+	XML_VERSION, OPEN_TAG, OPEN_RDF_RDF, CLOSE_RDF_RDF, CLOSE_TAG, 
+	RDF_RESOURCE, RDF_LI, RDF_DESCRIPTION, RDF_TYPE,
 	RDF_ID, RDF_ABOUT, OPEN_RDF_DESCRIPTION, OPEN_RDF_TYPE, OPEN_END_TAG, CLOSE_SINGULAR_TAG,
-	CLOSE_RDF_DESCRIPTION, RDF_ABOUTEACH, RDF_ABOUTEACHPREFIX, TAG_NAME_WITH_SCHEME, EQUALS,
-	OPEN_RDF_LI, RDF_BAGID, CLOSE_RDF_TYPE, CLOSE_RDF_LI;
-
-terminal RDF_PARSETYPE_LITERAL, RDF_PARSETYPE_RESOURCE, RDF_PARSETYPE_COLLECTION;
+	CLOSE_RDF_DESCRIPTION, TAG_NAME_WITH_SCHEME, EQUALS,
+	OPEN_RDF_LI, CLOSE_RDF_TYPE, CLOSE_RDF_LI;
 
 terminal String PROPERTY_VALUE, INSIDE_TEXT;
 
 /* Non terminals */
-non terminal String rdfRDF;
-non terminal String nodeElementList, nodeElement, propertyEltList, propertyElt, genericTag;
+non terminal MultiTreeNode rdfRDF;
+non terminal MultiTreeNode nodeElementList, nodeElement, propertyEltList, propertyElt, genericTag;
 
 
-non terminal String resourcePropertyElt, literalPropertyElt, parseTypeLiteralPropertyElt,
-	parseTypeResourcePropertyElt, parseTypeCollectionPropertyElt, 
-	parseTypeOtherPropertyElt, emptyPropertyElt;
+non terminal MultiTreeNode resourcePropertyElt;
 	
 // attributes
-non terminal String 
-	nodeElementAttr, nodeElementAttrList,
-	rdfRDFAttr, rdfIDAttr, rdfAboutAttr, rdfNodeIDAttr, 
-	rdfDatatypeAttr, rdfLiAttr, rdfAboutEachAttr, 
-	rdfaboutEachPrefixAttr, rdfBagIDAttr, rdfParseTypeAttr,
-	rdfResourceAttr, rdfDescriptionAttr, genericAttribute, expr_list, typeRPEltEND, liRPEltEND;/*,
-	literalPropertyEltAttr, emptyPropertyEltAttr1, emptyPropertyEltAttr2,
-	emptyPropertyEltAttr2List, emptyPropertyEltAttr;*/
+non terminal ArrayList<NodeProperty> nodeElementAttrList;
+
+non terminal NodeProperty nodeElementAttr,
+	rdfRDFAttr, rdfIDAttr, rdfAboutAttr, rdfLiAttr, rdfResourceAttr, 
+	rdfDescriptionAttr, genericAttribute;
+
+non terminal MultiTreeNode expr_list, 
+	typeRPEltEND, liRPEltEND, rdfRPEltEND, idRPEltEND, aboutRPEltEND,
+	resourceRPEltEND, descriptionRPEltEND;
 
 // close tags
-non terminal String rdfRdfCloseTag, rdfParseTypeCloseTag, rdfDescriptionCloseTag, rdfIdCloseTag, rdfBagIdCloseTag, rdfTypeCloseTag,
-			rdfResourceCloseTag, rdfAboutCloseTag, rdfAboutPrefixCloseTag, rdfNodeIdCloseTag, rdfLiCloseTag, rdfDatatypeCloseTag,
-			rdfAboutEachCloseTag;
+non terminal MultiTreeNode rdfRdfCloseTag, rdfDescriptionCloseTag, rdfIdCloseTag, rdfTypeCloseTag,
+			rdfResourceCloseTag, rdfAboutCloseTag, rdfLiCloseTag;
 // end terminals
-non terminal String rdfRdfEND, rdfParseTypeEND, rdfDescriptionEND, rdfIdEND, rdfBagIdEND, rdfTypeEND,
-			rdfResourceEND, rdfAboutEND, rdfAboutPrefixEND, rdfNodeIdEND, rdfLiEND, rdfDatatypeEND, rdfAboutEachEND;
+non terminal MultiTreeNode rdfRdfEND, rdfDescriptionEND, rdfIdEND, rdfTypeEND,
+			rdfResourceEND, rdfAboutEND, rdfLiEND;
 
 
-expr_list ::= XML_VERSION:xm rdfRDF:e {: System.out.println("xml " + ' ' + e); :}
+expr_list ::= XML_VERSION rdfRDF:e {: RESULT = syntaxTree.create("RDF Document Tree", e); :}
 		  ;
 		  
-rdfRDF ::= OPEN_TAG OPEN_RDF_RDF:e nodeElementAttrList CLOSE_TAG nodeElementList:e2 CLOSE_RDF_RDF {: RESULT = e.toString() + ' ' + e2.toString(); :};
+rdfRDF ::= OPEN_TAG OPEN_RDF_RDF:e0 nodeElementAttrList:e1 CLOSE_TAG nodeElementList:e2 rdfRPEltEND:e3 {: RESULT = createRDFRootTag(e0, e1, e2, e3); :};
 
-nodeElementList ::= nodeElementList:e1 nodeElement:e2 {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-				| nodeElement:e {: RESULT = e.toString(); :}
+nodeElementList ::= nodeElementList:e1 nodeElement:e2 {: RESULT = e1; RESULT.addChild(e2); :}
+				| nodeElement:e {: RESULT = e; :}
 				| 
 				;
 
-nodeElement ::= OPEN_TAG OPEN_RDF_RDF:e1 nodeElementAttrList CLOSE_TAG propertyEltList:e2 CLOSE_RDF_RDF {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-			| OPEN_TAG RDF_ID:e1 nodeElementAttrList CLOSE_TAG propertyEltList:e2 OPEN_END_TAG RDF_ID CLOSE_TAG {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-			| OPEN_TAG RDF_ABOUT:e1 nodeElementAttrList CLOSE_TAG propertyEltList:e2 OPEN_END_TAG RDF_ABOUT CLOSE_TAG {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-			| OPEN_TAG RDF_PARSETYPE:e1 nodeElementAttrList CLOSE_TAG propertyEltList:e2 OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG {: RESULT = e1.toString() + ' ' + ' ' + ' ' + e2.toString(); :}
-			| OPEN_TAG RDF_RESOURCE:e1 nodeElementAttrList CLOSE_TAG propertyEltList:e2 OPEN_END_TAG RDF_RESOURCE CLOSE_TAG {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-			| OPEN_TAG RDF_NODEID:e1 nodeElementAttrList CLOSE_TAG propertyEltList:e2 OPEN_END_TAG RDF_NODEID CLOSE_TAG {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-			| OPEN_TAG RDF_DATATYPE:e1 nodeElementAttrList CLOSE_TAG propertyEltList:e2 OPEN_END_TAG RDF_DATATYPE CLOSE_TAG {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-			| OPEN_TAG OPEN_RDF_DESCRIPTION:e1 nodeElementAttrList CLOSE_TAG propertyEltList:e2 CLOSE_RDF_DESCRIPTION {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-			| OPEN_TAG OPEN_RDF_TYPE:e1 nodeElementAttrList CLOSE_TAG propertyEltList:e2 rdfTypeEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
+nodeElement ::= OPEN_TAG OPEN_RDF_RDF:e0 nodeElementAttrList:e1 CLOSE_TAG propertyEltList:e2 rdfRdfEND:e3 {: RESULT = createNodeElementNode(e0, e1, e2, e3); :}
+			| OPEN_TAG RDF_ID:e0 nodeElementAttrList:e1 CLOSE_TAG propertyEltList:e2 rdfIdEND:e3 {: RESULT = createNodeElementNode(e0, e1, e2, e3); :}
+			| OPEN_TAG RDF_ABOUT:e0 nodeElementAttrList:e1 CLOSE_TAG propertyEltList:e2 rdfAboutEND:e3 {: RESULT = createNodeElementNode(e0, e1, e2, e3); :}
+			| OPEN_TAG RDF_RESOURCE:e0 nodeElementAttrList:e1 CLOSE_TAG propertyEltList:e2 rdfResourceEND:e3 {: RESULT = createNodeElementNode(e0, e1, e2, e3); :}
+			| OPEN_TAG OPEN_RDF_DESCRIPTION:e0 nodeElementAttrList:e1 CLOSE_TAG propertyEltList:e2 rdfDescriptionEND:e3 {: RESULT = createNodeElementNode(e0, e1, e2, e3); :}
+			| OPEN_TAG OPEN_RDF_TYPE:e0 nodeElementAttrList:e1 CLOSE_TAG propertyEltList:e2 rdfTypeEND:e3 {: RESULT = createNodeElementNode(e0, e1, e2, e3); :}
 			| 
 			;
 
-nodeElementAttrList ::= nodeElementAttrList nodeElementAttr:e {: RESULT = e; :}
-					| nodeElementAttr:e {: RESULT = e; :}
+nodeElementAttrList ::= nodeElementAttrList:e1 nodeElementAttr:e2 {: RESULT = e1; RESULT.add(e2); :}
+					| nodeElementAttr:e {: RESULT = new ArrayList<NodeProperty>(); RESULT.add(e); :}
 					| 
 					;
 
 nodeElementAttr ::= rdfRDFAttr:e {: RESULT = e; :}
-				| rdfParseTypeAttr:e {: RESULT = e; :}
 				| rdfResourceAttr:e {: RESULT = e; :}
 				| rdfAboutAttr:e {: RESULT = e; :}
 				| rdfIDAttr:e {: RESULT = e; :}
-				| rdfNodeIDAttr:e {: RESULT = e; :}
-				| rdfDatatypeAttr:e {: RESULT = e; :}
 				| rdfLiAttr:e {: RESULT = e; :}
-				| rdfAboutEachAttr:e {: RESULT = e; :}
-				| rdfaboutEachPrefixAttr:e {: RESULT = e; :}
-				| rdfBagIDAttr:e {: RESULT = e; :}
 				| genericAttribute:e {: RESULT = e; :}
-				| 
+				|
 				;
 
-genericAttribute ::= genericAttribute TAG_NAME_WITH_SCHEME EQUALS PROPERTY_VALUE:e {: RESULT = e.toString(); :}
-				 | TAG_NAME_WITH_SCHEME EQUALS PROPERTY_VALUE:e {: RESULT = e.toString(); :}
+genericAttribute ::= TAG_NAME_WITH_SCHEME:e1 EQUALS PROPERTY_VALUE:e2 {: RESULT = createNodeElementAttr(e1, e2); :}
 				 | 
 				 ;
 
-rdfRDFAttr ::= OPEN_RDF_RDF EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfParseTypeAttr ::= RDF_PARSETYPE EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfResourceAttr ::= RDF_RESOURCE EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfAboutAttr ::= RDF_ABOUT EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfIDAttr ::= RDF_ID EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfNodeIDAttr ::= RDF_NODEID EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfDatatypeAttr ::= RDF_DATATYPE EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfLiAttr ::= OPEN_RDF_LI EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfDescriptionAttr ::= OPEN_RDF_DESCRIPTION EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfAboutEachAttr ::= RDF_ABOUTEACH EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfaboutEachPrefixAttr ::= RDF_ABOUTEACHPREFIX EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
-rdfBagIDAttr ::= RDF_BAGID EQUALS PROPERTY_VALUE:pv {: RESULT = pv; :};
+rdfRDFAttr ::= OPEN_RDF_RDF:e0 EQUALS PROPERTY_VALUE:pv {: RESULT = createNodeElementAttr(e0, pv); :};
+rdfResourceAttr ::= RDF_RESOURCE:e0 EQUALS PROPERTY_VALUE:pv {: RESULT = createNodeElementAttr(e0, pv); :};
+rdfAboutAttr ::= RDF_ABOUT:e0 EQUALS PROPERTY_VALUE:pv {: RESULT = createNodeElementAttr(e0, pv); :};
+rdfIDAttr ::= RDF_ID EQUALS:e0 PROPERTY_VALUE:pv {: RESULT = createNodeElementAttr(e0, pv); :};
+rdfLiAttr ::= OPEN_RDF_LI:e0 EQUALS PROPERTY_VALUE:pv {: RESULT = createNodeElementAttr(e0, pv); :};
+rdfDescriptionAttr ::= OPEN_RDF_DESCRIPTION:e0 EQUALS PROPERTY_VALUE:pv {: RESULT = createNodeElementAttr(e0, pv); :};
 
 
-propertyEltList ::= propertyEltList:e1 propertyElt:e2 {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-				| propertyElt:e {: RESULT = e.toString(); :}
+propertyEltList ::= propertyEltList:e1 propertyElt:e2 {: RESULT = e1; RESULT.addChild(e2); :}
+				| propertyElt:e {: RESULT = e; :}
 				| 
 				;
 		
-propertyElt ::= resourcePropertyElt:e {: RESULT = e.toString(); :}
-			//| literalPropertyElt {: System.out.println("propertyElt - literalPropertyElt"); :}
-			//| parseTypeLiteralPropertyElt {: System.out.println("propertyElt - parseTypeLiteralPropertyElt"); :}
-			//| parseTypeResourcePropertyElt {: System.out.println("propertyElt - parseTypeResourcePropertyElt"); :}
-			//| parseTypeCollectionPropertyElt {: System.out.println("propertyElt - parseTypeCollectionPropertyElt"); :}
-			//| parseTypeOtherPropertyElt {: System.out.println("propertyElt - parseTypeOtherPropertyElt"); :}
-			//| emptyPropertyElt {: System.out.println("propertyElt - emptyPropertyElt"); :}
-			|
+propertyElt ::= resourcePropertyElt:e {: RESULT = e; :}
 			;
 
-resourcePropertyElt ::= OPEN_TAG OPEN_RDF_RDF:e1 nodeElementAttrList CLOSE_TAG nodeElement:e2 rdfRdfEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG RDF_ID:e1 CLOSE_TAG nodeElement:e2 rdfIdEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG RDF_ABOUT:e1 nodeElementAttrList CLOSE_TAG nodeElement:e2 rdfAboutEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG RDF_PARSETYPE:e1 nodeElementAttrList CLOSE_TAG nodeElement:e2 rdfParseTypeEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG RDF_RESOURCE:e1 nodeElementAttrList CLOSE_TAG nodeElement:e2 rdfResourceEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG RDF_NODEID:e1 nodeElementAttrList CLOSE_TAG nodeElement:e2 rdfNodeIdEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG RDF_DATATYPE:e1 nodeElementAttrList CLOSE_TAG nodeElement:e2 rdfDatatypeEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG OPEN_RDF_DESCRIPTION:e1 nodeElementAttrList CLOSE_TAG nodeElement:e2 rdfDescriptionEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG RDF_ABOUTEACH:e1 nodeElementAttrList CLOSE_TAG nodeElement:e2 rdfAboutEachEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG RDF_ABOUTEACHPREFIX:e1 nodeElementAttrList CLOSE_TAG nodeElement:e2 rdfAboutPrefixEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG RDF_BAGID:e1 nodeElementAttrList CLOSE_TAG nodeElement:e2 rdfBagIdEND {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG OPEN_RDF_TYPE:e1 nodeElementAttrList typeRPEltEND:e2 {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| OPEN_TAG OPEN_RDF_LI:e1 nodeElementAttrList liRPEltEND:e2 {: RESULT = e1.toString() + ' ' + e2.toString(); :}
-					| genericTag:e {: RESULT = e.toString(); :}
-					| {: RESULT = ""; :}
+resourcePropertyElt ::= OPEN_TAG OPEN_RDF_RDF:e0 nodeElementAttrList:e1 rdfRPEltEND:e2 {: RESULT = createResourcePropertyEltNode(e0, e1, e2); :}
+					| OPEN_TAG RDF_ID:e0 CLOSE_TAG idRPEltEND:e2 {: RESULT = createResourcePropertyEltNode(e0, null, e2); :}
+					| OPEN_TAG RDF_ABOUT:e0 nodeElementAttrList:e1 aboutRPEltEND:e2 {: RESULT = createResourcePropertyEltNode(e0, e1, e2); :}
+					| OPEN_TAG RDF_RESOURCE:e0 nodeElementAttrList:e1 resourceRPEltEND:e2 {: RESULT = createResourcePropertyEltNode(e0, e1, e2); :}
+					| OPEN_TAG OPEN_RDF_DESCRIPTION:e0 nodeElementAttrList:e1 descriptionRPEltEND:e2 {: RESULT = createResourcePropertyEltNode(e0, e1, e2); :}
+					| OPEN_TAG OPEN_RDF_TYPE:e0 nodeElementAttrList:e1 typeRPEltEND:e2 {: RESULT = createResourcePropertyEltNode(e0, e1, e2); :}
+					| OPEN_TAG OPEN_RDF_LI:e0 nodeElementAttrList:e1 liRPEltEND:e2 {: RESULT = createResourcePropertyEltNode(e0, e1, e2); :}
+					| genericTag:e {: RESULT = e; :}
+					| {: RESULT = null; :}
 					;
 
-typeRPEltEND ::= CLOSE_TAG nodeElement:e rdfTypeEND {: RESULT = e.toString(); :}
-		|  INSIDE_TEXT rdfTypeEND {: RESULT = "inside_text"; :}
-		|  rdfTypeEND {: RESULT = ""; :}
-		;
-		
-liRPEltEND ::= CLOSE_TAG nodeElement:e rdfLiEND {: RESULT = e.toString(); :}
-		|  INSIDE_TEXT rdfLiEND {: RESULT = "inside_text"; :}
-		|  rdfLiEND {: RESULT = ""; :}
+
+rdfRPEltEND ::= rdfRdfEND:e {: RESULT = createRPEltEndNode(e, null); :}
+		|  INSIDE_TEXT:it rdfRdfEND:e {: RESULT = createRPEltEndNode(e, it); :}
 		;
 
-genericTag ::= OPEN_TAG TAG_NAME_WITH_SCHEME:e nodeElementAttrList INSIDE_TEXT TAG_NAME_WITH_SCHEME CLOSE_TAG {: RESULT = e.toString(); :}
-			| OPEN_TAG TAG_NAME_WITH_SCHEME:e CLOSE_TAG OPEN_END_TAG TAG_NAME_WITH_SCHEME CLOSE_TAG {: RESULT = e.toString(); :}
+idRPEltEND ::= rdfIdEND:e {: RESULT = createRPEltEndNode(e, null); :}
+		|  INSIDE_TEXT:it rdfIdEND:e {: RESULT = createRPEltEndNode(e, it); :}
+		;
+
+aboutRPEltEND ::= rdfAboutEND:e {: RESULT = createRPEltEndNode(e, null); :}
+		|  INSIDE_TEXT:it rdfAboutEND:e {: RESULT = createRPEltEndNode(e, it); :}
+		;
+
+resourceRPEltEND ::= rdfResourceEND:e {: RESULT = createRPEltEndNode(e, null); :}
+		|  INSIDE_TEXT:it rdfResourceEND:e {: RESULT = createRPEltEndNode(e, it); :}
+		;
+
+descriptionRPEltEND ::= rdfDescriptionEND:e {: RESULT = createRPEltEndNode(e, null); :}
+		|  INSIDE_TEXT:it rdfDescriptionEND:e {: RESULT = createRPEltEndNode(e, it); :}
+		;
+
+typeRPEltEND ::= rdfTypeEND:e {: RESULT = createRPEltEndNode(e, null); :}
+		|  INSIDE_TEXT:it rdfTypeEND:e {: RESULT = createRPEltEndNode(e, it); :}
+		;
+		
+liRPEltEND ::= rdfLiEND:e {: RESULT = createRPEltEndNode(e, null); :}
+		|  INSIDE_TEXT:it rdfLiEND:e {: RESULT = createRPEltEndNode(e, it); :}
+		;
+
+genericTag ::= OPEN_TAG TAG_NAME_WITH_SCHEME:e1 nodeElementAttrList:e2 INSIDE_TEXT:it TAG_NAME_WITH_SCHEME CLOSE_TAG {: RESULT = createGenericTagNode(e1, it); :}
+			| OPEN_TAG TAG_NAME_WITH_SCHEME:e1 CLOSE_TAG OPEN_END_TAG TAG_NAME_WITH_SCHEME CLOSE_TAG {: RESULT = createGenericTagNode(e1, null); :}
+			| OPEN_TAG TAG_NAME_WITH_SCHEME:e1 CLOSE_SINGULAR_TAG {: RESULT = createGenericTagNode(e1, null); :}
 			;
 			
 rdfTypeCloseTag ::= CLOSE_SINGULAR_TAG {: :}
@@ -183,8 +185,8 @@ rdfTypeCloseTag ::= CLOSE_SINGULAR_TAG {: :}
                 ;
 
 
-rdfTypeEND ::= CLOSE_TAG nodeElement:e rdfTypeCloseTag {: RESULT = e.toString(); :}
-                | rdfTypeCloseTag {: RESULT = ""; :}
+rdfTypeEND ::= CLOSE_TAG nodeElement:e rdfTypeCloseTag {: RESULT = e; :}
+                | rdfTypeCloseTag {: RESULT = null; :}
                 ;			
 
 rdfRdfCloseTag ::= CLOSE_SINGULAR_TAG {: :}
@@ -194,23 +196,9 @@ rdfRdfCloseTag ::= CLOSE_SINGULAR_TAG {: :}
                 ;
 
 
-rdfRdfEND ::= CLOSE_TAG nodeElement:e rdfRdfCloseTag {: RESULT = e.toString(); :}
-                | rdfRdfCloseTag {: RESULT = ""; :}
+rdfRdfEND ::= CLOSE_TAG nodeElement:e rdfRdfCloseTag {: RESULT = e; :}
+                | rdfRdfCloseTag {: RESULT = null; :}
                 ;
-
-
-
-rdfParseTypeCloseTag ::= CLOSE_SINGULAR_TAG {: :}
-                | OPEN_END_TAG RDF_PARSETYPE CLOSE_TAG {: :}
-                | RDF_PARSETYPE CLOSE_TAG {: :}
-                ;
-
-
-rdfParseTypeEND ::= CLOSE_TAG nodeElement:e rdfParseTypeCloseTag {: RESULT = e.toString(); :}
-                | rdfParseTypeCloseTag {: RESULT = ""; :}
-                ;
-
-
 
 rdfDescriptionCloseTag ::= CLOSE_SINGULAR_TAG {: :}
 				| CLOSE_RDF_DESCRIPTION {: :}
@@ -219,8 +207,8 @@ rdfDescriptionCloseTag ::= CLOSE_SINGULAR_TAG {: :}
                 ;
 
 
-rdfDescriptionEND ::= CLOSE_TAG nodeElement:e rdfDescriptionCloseTag {: RESULT = e.toString(); :}
-                | rdfDescriptionCloseTag {: RESULT = ""; :}
+rdfDescriptionEND ::= CLOSE_TAG nodeElement:e rdfDescriptionCloseTag {: RESULT = e; :}
+                | rdfDescriptionCloseTag {: RESULT = null; :}
                 ;
 
 
@@ -231,22 +219,9 @@ rdfIdCloseTag ::= CLOSE_SINGULAR_TAG {: :}
                 ;
 
 
-rdfIdEND ::= CLOSE_TAG nodeElement:e rdfIdCloseTag {: RESULT = e.toString(); :}
-                | rdfIdCloseTag {: RESULT = ""; :}
+rdfIdEND ::= CLOSE_TAG nodeElement:e rdfIdCloseTag {: RESULT = e; :}
+                | rdfIdCloseTag {: RESULT = null; :}
                 ;
-
-
-
-rdfBagIdCloseTag ::= CLOSE_SINGULAR_TAG {: :}
-                | OPEN_END_TAG RDF_BAGID CLOSE_TAG {: :}
-                | RDF_BAGID CLOSE_TAG {: :}
-                ;
-
-
-rdfBagIdEND ::= CLOSE_TAG nodeElement:e rdfBagIdCloseTag {: RESULT = e.toString(); :}
-                | rdfBagIdCloseTag {: RESULT = ""; :}
-                ;
-
 
 
 rdfResourceCloseTag ::= CLOSE_SINGULAR_TAG {: :}
@@ -255,10 +230,9 @@ rdfResourceCloseTag ::= CLOSE_SINGULAR_TAG {: :}
                 ;
 
 
-rdfResourceEND ::= CLOSE_TAG nodeElement:e rdfResourceCloseTag {: RESULT = e.toString(); :}
-                | rdfResourceCloseTag {: RESULT = ""; :}
+rdfResourceEND ::= CLOSE_TAG nodeElement:e rdfResourceCloseTag {: RESULT = e; :}
+                | rdfResourceCloseTag {: RESULT = null; :}
                 ;
-
 
 
 rdfAboutCloseTag ::= CLOSE_SINGULAR_TAG {: :}
@@ -267,45 +241,9 @@ rdfAboutCloseTag ::= CLOSE_SINGULAR_TAG {: :}
                 ;
 
 
-rdfAboutEND ::= CLOSE_TAG nodeElement:e rdfAboutCloseTag {: RESULT = e.toString(); :}
-                | rdfAboutCloseTag {: RESULT = ""; :}
+rdfAboutEND ::= CLOSE_TAG nodeElement:e rdfAboutCloseTag {: RESULT = e; :}
+                | rdfAboutCloseTag {: RESULT = null; :}
                 ;
-                
-
-rdfAboutEachCloseTag ::= CLOSE_SINGULAR_TAG {: :}
-                | OPEN_END_TAG RDF_ABOUTEACH CLOSE_TAG {: :}
-                | RDF_ABOUTEACH CLOSE_TAG {: :}
-                ;
-
-
-rdfAboutEachEND ::= CLOSE_TAG nodeElement:e rdfAboutCloseTag {: RESULT = e.toString(); :}
-                | rdfAboutCloseTag {: RESULT = ""; :}
-                ;
-
-
-
-rdfAboutPrefixCloseTag ::= CLOSE_SINGULAR_TAG {: :}
-                | OPEN_END_TAG RDF_ABOUTEACHPREFIX CLOSE_TAG {: :}
-                | RDF_ABOUTEACHPREFIX CLOSE_TAG {: :}
-                ;
-
-
-rdfAboutPrefixEND ::= CLOSE_TAG nodeElement:e rdfAboutPrefixCloseTag {: RESULT = e.toString(); :}
-                | rdfAboutPrefixCloseTag {: RESULT = ""; :}
-                ;
-
-
-
-rdfNodeIdCloseTag ::= CLOSE_SINGULAR_TAG {: :}
-                | OPEN_END_TAG RDF_NODEID CLOSE_TAG {: :}
-                | RDF_NODEID CLOSE_TAG {: :}
-                ;
-
-
-rdfNodeIdEND ::= CLOSE_TAG nodeElement:e rdfNodeIdCloseTag {: RESULT = e.toString(); :}
-                | rdfNodeIdCloseTag {: RESULT = ""; :}
-                ;
-
 
 
 rdfLiCloseTag ::= CLOSE_SINGULAR_TAG {: :}
@@ -315,18 +253,6 @@ rdfLiCloseTag ::= CLOSE_SINGULAR_TAG {: :}
                 ;
 
 
-rdfLiEND ::= CLOSE_TAG nodeElement:e rdfLiCloseTag {: RESULT = e.toString(); :}
-                | rdfLiCloseTag {: RESULT = ""; :}
-                ;
-
-
-
-rdfDatatypeCloseTag ::= CLOSE_SINGULAR_TAG {: :}
-                | OPEN_END_TAG RDF_DATATYPE CLOSE_TAG {: :}
-                | RDF_DATATYPE CLOSE_TAG {: :}
-                ;
-
-
-rdfDatatypeEND ::= CLOSE_TAG nodeElement:e rdfDatatypeCloseTag {: RESULT = e.toString(); :}
-                | rdfDatatypeCloseTag {: RESULT = ""; :}
+rdfLiEND ::= CLOSE_TAG nodeElement:e rdfLiCloseTag {: RESULT = e; :}
+                | rdfLiCloseTag {: RESULT = null; :}
                 ;

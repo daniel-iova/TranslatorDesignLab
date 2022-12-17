@@ -8,143 +8,55 @@ package cup.example;
 /** CUP generated interface containing symbol constants. */
 public interface sym {
   /* terminals */
-  public static final int CLOSE_RDF_BAG = 28;
-  public static final int RDFS_RANGE = 39;
-  public static final int OPEN_RDF_BAG = 12;
-  public static final int RDF_PREDICATE = 53;
-  public static final int RDF_OBJECT = 54;
-  public static final int RDF_ABOUTEACHPREFIX = 62;
-  public static final int RDF_PARSETYPE = 47;
-  public static final int CLOSE_RDF_DESCRIPTION = 24;
-  public static final int OPEN_RDF_DATATYPE = 20;
-  public static final int RDFS_SEEALSO = 55;
-  public static final int CLOSE_RDF_DATATYPE = 36;
-  public static final int EQUALS = 5;
-  public static final int RDF_PARSETYPE_RESOURCE = 65;
-  public static final int CLOSE_RDF_LANGSTRING = 32;
-  public static final int CLOSE_SINGULAR_TAG = 60;
-  public static final int RDFS_SUBCLASSOF = 41;
-  public static final int CLOSE_RDF_RDF = 23;
-  public static final int OPEN_RDF_RDF = 7;
-  public static final int OPEN_RDF_STATEMENT = 19;
-  public static final int CLOSE_RDF_LIST = 34;
-  public static final int RDF_DATATYPE = 48;
-  public static final int PROPERTY_VALUE = 67;
-  public static final int RDF_BAGID = 63;
-  public static final int OPEN_RDF_TYPE = 22;
-  public static final int RDF_VALUE = 57;
-  public static final int RDFS_COMMENT = 44;
-  public static final int OPEN_RDF_LANGSTRING = 16;
-  public static final int CLOSE_RDF_HTML = 33;
-  public static final int RDFS_DOMAIN = 40;
-  public static final int RDFS_SUBPROPERTYOF = 42;
-  public static final int CLOSE_RDF_ALT = 30;
-  public static final int OPEN_RDF_DESCRIPTION = 8;
-  public static final int RDF_PARSETYPE_LITERAL = 64;
-  public static final int OPEN_RDF_ALT = 14;
-  public static final int CLOSE_RDFS_CLASS = 26;
-  public static final int OPEN_RDF_CONTAINER = 21;
-  public static final int QUOTE = 59;
-  public static final int RDF_RESOURCE = 46;
-  public static final int CLOSE_RDFS_RESOURCE = 25;
+  public static final int CLOSE_RDF_DESCRIPTION = 17;
+  public static final int OPEN_RDF_DESCRIPTION = 13;
+  public static final int RDF_TYPE = 10;
+  public static final int CLOSE_SINGULAR_TAG = 16;
+  public static final int OPEN_END_TAG = 15;
+  public static final int RDF_LI = 8;
+  public static final int OPEN_RDF_TYPE = 14;
+  public static final int RDF_DESCRIPTION = 9;
+  public static final int RDF_ID = 11;
+  public static final int CLOSE_RDF_RDF = 5;
+  public static final int CLOSE_TAG = 6;
+  public static final int EQUALS = 19;
   public static final int EOF = 0;
-  public static final int RDF_ABOUTEACH = 61;
+  public static final int RDF_RESOURCE = 7;
   public static final int error = 1;
-  public static final int RDF_N = 51;
-  public static final int CLOSE_RDF_LI = 31;
-  public static final int TAG_NAME_WITH_SCHEME = 6;
-  public static final int XML_VERSION = 58;
-  public static final int OPEN_END_TAG = 3;
-  public static final int RDFS_LABEL = 43;
-  public static final int CLOSE_RDF_SEQ = 29;
-  public static final int OPEN_RDF_SEQ = 13;
-  public static final int OPEN_RDFS_CLASS = 10;
-  public static final int RDF_NODEID = 49;
-  public static final int CLOSE_RDF_STATEMENT = 35;
-  public static final int OPEN_RDF_LI = 15;
-  public static final int OPEN_RDFS_LITERAL = 11;
-  public static final int OPEN_RDF_LIST = 18;
-  public static final int CLOSE_RDFS_LITERAL = 27;
-  public static final int RDFS_ISDEFINEDBY = 56;
-  public static final int RDF_PARSETYPE_COLLECTION = 66;
-  public static final int CLOSE_RDF_TYPE = 38;
-  public static final int INSIDE_TEXT = 68;
-  public static final int RDF_SUBJECT = 52;
-  public static final int OPEN_RDF_HTML = 17;
-  public static final int RDF_ID = 50;
-  public static final int CLOSE_RDF_CONTAINER = 37;
-  public static final int OPEN_RDFS_RESOURCE = 9;
-  public static final int OPEN_TAG = 2;
-  public static final int CLOSE_TAG = 4;
-  public static final int RDF_ABOUT = 45;
+  public static final int PROPERTY_VALUE = 23;
+  public static final int OPEN_RDF_RDF = 4;
+  public static final int RDF_ABOUT = 12;
+  public static final int CLOSE_RDF_LI = 22;
+  public static final int OPEN_RDF_LI = 20;
+  public static final int TAG_NAME_WITH_SCHEME = 18;
+  public static final int OPEN_TAG = 3;
+  public static final int XML_VERSION = 2;
+  public static final int INSIDE_TEXT = 24;
+  public static final int CLOSE_RDF_TYPE = 21;
   public static final String[] terminalNames = new String[] {
   "EOF",
   "error",
-  "OPEN_TAG",
-  "OPEN_END_TAG",
-  "CLOSE_TAG",
-  "EQUALS",
-  "TAG_NAME_WITH_SCHEME",
-  "OPEN_RDF_RDF",
-  "OPEN_RDF_DESCRIPTION",
-  "OPEN_RDFS_RESOURCE",
-  "OPEN_RDFS_CLASS",
-  "OPEN_RDFS_LITERAL",
-  "OPEN_RDF_BAG",
-  "OPEN_RDF_SEQ",
-  "OPEN_RDF_ALT",
-  "OPEN_RDF_LI",
-  "OPEN_RDF_LANGSTRING",
-  "OPEN_RDF_HTML",
-  "OPEN_RDF_LIST",
-  "OPEN_RDF_STATEMENT",
-  "OPEN_RDF_DATATYPE",
-  "OPEN_RDF_CONTAINER",
-  "OPEN_RDF_TYPE",
-  "CLOSE_RDF_RDF",
-  "CLOSE_RDF_DESCRIPTION",
-  "CLOSE_RDFS_RESOURCE",
-  "CLOSE_RDFS_CLASS",
-  "CLOSE_RDFS_LITERAL",
-  "CLOSE_RDF_BAG",
-  "CLOSE_RDF_SEQ",
-  "CLOSE_RDF_ALT",
-  "CLOSE_RDF_LI",
-  "CLOSE_RDF_LANGSTRING",
-  "CLOSE_RDF_HTML",
-  "CLOSE_RDF_LIST",
-  "CLOSE_RDF_STATEMENT",
-  "CLOSE_RDF_DATATYPE",
-  "CLOSE_RDF_CONTAINER",
-  "CLOSE_RDF_TYPE",
-  "RDFS_RANGE",
-  "RDFS_DOMAIN",
-  "RDFS_SUBCLASSOF",
-  "RDFS_SUBPROPERTYOF",
-  "RDFS_LABEL",
-  "RDFS_COMMENT",
-  "RDF_ABOUT",
-  "RDF_RESOURCE",
-  "RDF_PARSETYPE",
-  "RDF_DATATYPE",
-  "RDF_NODEID",
-  "RDF_ID",
-  "RDF_N",
-  "RDF_SUBJECT",
-  "RDF_PREDICATE",
-  "RDF_OBJECT",
-  "RDFS_SEEALSO",
-  "RDFS_ISDEFINEDBY",
-  "RDF_VALUE",
   "XML_VERSION",
-  "QUOTE",
+  "OPEN_TAG",
+  "OPEN_RDF_RDF",
+  "CLOSE_RDF_RDF",
+  "CLOSE_TAG",
+  "RDF_RESOURCE",
+  "RDF_LI",
+  "RDF_DESCRIPTION",
+  "RDF_TYPE",
+  "RDF_ID",
+  "RDF_ABOUT",
+  "OPEN_RDF_DESCRIPTION",
+  "OPEN_RDF_TYPE",
+  "OPEN_END_TAG",
   "CLOSE_SINGULAR_TAG",
-  "RDF_ABOUTEACH",
-  "RDF_ABOUTEACHPREFIX",
-  "RDF_BAGID",
-  "RDF_PARSETYPE_LITERAL",
-  "RDF_PARSETYPE_RESOURCE",
-  "RDF_PARSETYPE_COLLECTION",
+  "CLOSE_RDF_DESCRIPTION",
+  "TAG_NAME_WITH_SCHEME",
+  "EQUALS",
+  "OPEN_RDF_LI",
+  "CLOSE_RDF_TYPE",
+  "CLOSE_RDF_LI",
   "PROPERTY_VALUE",
   "INSIDE_TEXT"
   };
